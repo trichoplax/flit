@@ -1,5 +1,17 @@
-#title-west {display: none;}
-#title-north {}
-#board-area {}
-#info-south {}
-#info-east {display:none;}
+#title-west {
+  background-color: cyan;
+  display: none;
+}
+#title-north {
+  background-color: blue;
+}
+#board-area {
+  background-color: grey;
+}
+#info-south {
+  background-color: red;
+}
+#info-east {
+  background-color: pink;
+  display:none;
+}
