@@ -22,6 +22,7 @@ body {
 }
 #div-info-east {
   background-color: pink;
+  float: right;
   display:none;
 }
 #button-logo-west{
