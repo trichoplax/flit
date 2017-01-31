@@ -129,7 +129,7 @@ function arrange_ShortLandscapeFitToHeight() {
   document.getElementById('info-east').style.height = h.toString().concat('px');
   
   document.getElementById('board-canvas').style.width = (h*6/7).toString().concat('px');
-  document.getElementById('board-canvas').style.height = (h*6/7).toString().concat('px');oncat('px');
+  document.getElementById('board-canvas').style.height = (h*6/7).toString().concat('px');
 }
 
 function arrange_LongLandscapeFitToWidth() {
