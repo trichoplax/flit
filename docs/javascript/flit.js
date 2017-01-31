@@ -25,144 +25,144 @@ function reorganise() {
 }
 
 function arrange_LongPortraitFitToWidth() {
-  document.getElementById('title-west').style.display = 'none';
-  document.getElementById('title-north').style.display = 'inline';
-  document.getElementById('info-east').style.display = 'none';
-  document.getElementById('info-south').style.display = 'inline';
+  document.getElementById('div-title-west').style.display = 'none';
+  document.getElementById('div-title-north').style.display = 'inline';
+  document.getElementById('div-info-east').style.display = 'none';
+  document.getElementById('div-info-south').style.display = 'inline';
   
   var w = window.innerWidth;
-  document.getElementById('title-north').style.width = w.toString().concat('px');
-  document.getElementById('title-north').style.height = (w/6).toString().concat('px');
-  document.getElementById('board-area').style.width = w.toString().concat('px');
-  document.getElementById('board-area').style.height = w.toString().concat('px');
-  document.getElementById('info-south').style.width = w.toString().concat('px');
-  document.getElementById('info-south').style.height = (window.innerHeight-w*7/6).toString().concat('px');
+  document.getElementById('div-title-north').style.width = w.toString().concat('px');
+  document.getElementById('div-title-north').style.height = (w/6).toString().concat('px');
+  document.getElementById('div-board-area').style.width = w.toString().concat('px');
+  document.getElementById('div-board-area').style.height = w.toString().concat('px');
+  document.getElementById('div-info-south').style.width = w.toString().concat('px');
+  document.getElementById('div-info-south').style.height = (window.innerHeight-w*7/6).toString().concat('px');
   
   document.getElementById('board-canvas').style.width = w.toString().concat('px');
   document.getElementById('board-canvas').style.height = w.toString().concat('px'); 
 }
 
 function arrange_LongPortraitFitToHeight() {
-  document.getElementById('title-west').style.display = 'none';
-  document.getElementById('title-north').style.display = 'inline';
-  document.getElementById('info-east').style.display = 'none';
-  document.getElementById('info-south').style.display = 'inline';
+  document.getElementById('div-title-west').style.display = 'none';
+  document.getElementById('div-title-north').style.display = 'inline';
+  document.getElementById('div-info-east').style.display = 'none';
+  document.getElementById('div-info-south').style.display = 'inline';
   
   var w = window.innerHeight * THRESHOLD_LongPortraitFitToWidth;
-  document.getElementById('title-north').style.width = w.toString().concat('px');
-  document.getElementById('title-north').style.height = (w/6).toString().concat('px');
-  document.getElementById('board-area').style.width = w.toString().concat('px');
-  document.getElementById('board-area').style.height = w.toString().concat('px');
-  document.getElementById('info-south').style.width = w.toString().concat('px');
-  document.getElementById('info-south').style.height = (window.innerHeight-w*7/6).toString().concat('px');
+  document.getElementById('div-title-north').style.width = w.toString().concat('px');
+  document.getElementById('div-title-north').style.height = (w/6).toString().concat('px');
+  document.getElementById('div-board-area').style.width = w.toString().concat('px');
+  document.getElementById('div-board-area').style.height = w.toString().concat('px');
+  document.getElementById('div-info-south').style.width = w.toString().concat('px');
+  document.getElementById('div-info-south').style.height = (window.innerHeight-w*7/6).toString().concat('px');
   
   document.getElementById('board-canvas').style.width = w.toString().concat('px');
   document.getElementById('board-canvas').style.height = w.toString().concat('px');
 }
 
 function arrange_ShortPortraitFitToWidth() {
-  document.getElementById('title-north').style.display = 'none';
-  document.getElementById('title-west').style.display = 'inline';
-  document.getElementById('info-east').style.display = 'none';
-  document.getElementById('info-south').style.display = 'inline';
+  document.getElementById('div-title-north').style.display = 'none';
+  document.getElementById('div-title-west').style.display = 'inline';
+  document.getElementById('div-info-east').style.display = 'none';
+  document.getElementById('div-info-south').style.display = 'inline';
   
   var w = window.innerWidth;
-  document.getElementById('title-west').style.width = (w/7).toString().concat('px');
-  document.getElementById('title-west').style.height = (w*6/7).toString().concat('px');
-  document.getElementById('board-area').style.width = (w*6/7).toString().concat('px');
-  document.getElementById('board-area').style.height = (w*6/7).toString().concat('px');
-  document.getElementById('info-south').style.width = w.toString().concat('px');
-  document.getElementById('info-south').style.height = (window.innerHeight-w*6/7).toString().concat('px');
+  document.getElementById('div-title-west').style.width = (w/7).toString().concat('px');
+  document.getElementById('div-title-west').style.height = (w*6/7).toString().concat('px');
+  document.getElementById('div-board-area').style.width = (w*6/7).toString().concat('px');
+  document.getElementById('div-board-area').style.height = (w*6/7).toString().concat('px');
+  document.getElementById('div-info-south').style.width = w.toString().concat('px');
+  document.getElementById('div-info-south').style.height = (window.innerHeight-w*6/7).toString().concat('px');
   
   document.getElementById('board-canvas').style.width = (w*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (w*6/7).toString().concat('px');
 }
 
 function arrange_ShortPortraitFitToHeight() {
-  document.getElementById('title-north').style.display = 'none';
-  document.getElementById('title-west').style.display = 'inline';
-  document.getElementById('info-east').style.display = 'none';
-  document.getElementById('info-south').style.display = 'inline';
+  document.getElementById('div-title-north').style.display = 'none';
+  document.getElementById('div-title-west').style.display = 'inline';
+  document.getElementById('div-info-east').style.display = 'none';
+  document.getElementById('div-info-south').style.display = 'inline';
   
   var w = window.innerHeight * THRESHOLD_ShortPortraitFitToWidth;
-  document.getElementById('title-west').style.width = (w/7).toString().concat('px');
-  document.getElementById('title-west').style.height = (w*6/7).toString().concat('px');
-  document.getElementById('board-area').style.width = (w*6/7).toString().concat('px');
-  document.getElementById('board-area').style.height = (w*6/7).toString().concat('px');
-  document.getElementById('info-south').style.width = w.toString().concat('px');
-  document.getElementById('info-south').style.height = (window.innerHeight-w*6/7).toString().concat('px');
+  document.getElementById('div-title-west').style.width = (w/7).toString().concat('px');
+  document.getElementById('div-title-west').style.height = (w*6/7).toString().concat('px');
+  document.getElementById('div-board-area').style.width = (w*6/7).toString().concat('px');
+  document.getElementById('div-board-area').style.height = (w*6/7).toString().concat('px');
+  document.getElementById('div-info-south').style.width = w.toString().concat('px');
+  document.getElementById('div-info-south').style.height = (window.innerHeight-w*6/7).toString().concat('px');
   
   document.getElementById('board-canvas').style.width = (w*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (w*6/7).toString().concat('px');
 }
 
 function arrange_ShortLandscapeFitToWidth() {
-  document.getElementById('title-west').style.display = 'none';
-  document.getElementById('title-north').style.display = 'inline';
-  document.getElementById('info-south').style.display = 'none';
-  document.getElementById('info-east').style.display = 'inline';
+  document.getElementById('div-title-west').style.display = 'none';
+  document.getElementById('div-title-north').style.display = 'inline';
+  document.getElementById('div-info-south').style.display = 'none';
+  document.getElementById('div-info-east').style.display = 'inline';
   
   var h = window.innerWidth * THRESHOLD_ShortPortraitFitToWidth;
-  document.getElementById('title-north').style.width = (h*6/7).toString().concat('px');
-  document.getElementById('title-north').style.height = (h/7).toString().concat('px');
-  document.getElementById('board-area').style.width = (h*6/7).toString().concat('px');
-  document.getElementById('board-area').style.height = (h*6/7).toString().concat('px');
-  document.getElementById('info-east').style.width = (window.innerWidth-h*6/7).toString().concat('px');
-  document.getElementById('info-east').style.height = h.toString().concat('px');
+  document.getElementById('div-title-north').style.width = (h*6/7).toString().concat('px');
+  document.getElementById('div-title-north').style.height = (h/7).toString().concat('px');
+  document.getElementById('div-board-area').style.width = (h*6/7).toString().concat('px');
+  document.getElementById('div-board-area').style.height = (h*6/7).toString().concat('px');
+  document.getElementById('div-info-east').style.width = (window.innerWidth-h*6/7).toString().concat('px');
+  document.getElementById('div-info-east').style.height = h.toString().concat('px');
   
   document.getElementById('board-canvas').style.width = (h*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (h*6/7).toString().concat('px');
 }
 
 function arrange_ShortLandscapeFitToHeight() {
-  document.getElementById('title-west').style.display = 'none';
-  document.getElementById('title-north').style.display = 'inline';
-  document.getElementById('info-south').style.display = 'none';
-  document.getElementById('info-east').style.display = 'inline';
+  document.getElementById('div-title-west').style.display = 'none';
+  document.getElementById('div-title-north').style.display = 'inline';
+  document.getElementById('div-info-south').style.display = 'none';
+  document.getElementById('div-info-east').style.display = 'inline';
   
   var h = window.innerHeight;
-  document.getElementById('title-north').style.width = (h*6/7).toString().concat('px');
-  document.getElementById('title-north').style.height = (h/7).toString().concat('px');
-  document.getElementById('board-area').style.width = (h*6/7).toString().concat('px');
-  document.getElementById('board-area').style.height = (h*6/7).toString().concat('px');
-  document.getElementById('info-east').style.width = (window.innerWidth-h*6/7).toString().concat('px');
-  document.getElementById('info-east').style.height = h.toString().concat('px');
+  document.getElementById('div-title-north').style.width = (h*6/7).toString().concat('px');
+  document.getElementById('div-title-north').style.height = (h/7).toString().concat('px');
+  document.getElementById('div-board-area').style.width = (h*6/7).toString().concat('px');
+  document.getElementById('div-board-area').style.height = (h*6/7).toString().concat('px');
+  document.getElementById('div-info-east').style.width = (window.innerWidth-h*6/7).toString().concat('px');
+  document.getElementById('div-info-east').style.height = h.toString().concat('px');
   
   document.getElementById('board-canvas').style.width = (h*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (h*6/7).toString().concat('px');
 }
 
 function arrange_LongLandscapeFitToWidth() {
-  document.getElementById('title-north').style.display = 'none';
-  document.getElementById('title-west').style.display = 'inline';
-  document.getElementById('info-south').style.display = 'none';
-  document.getElementById('info-east').style.display = 'inline';
+  document.getElementById('div-title-north').style.display = 'none';
+  document.getElementById('div-title-west').style.display = 'inline';
+  document.getElementById('div-info-south').style.display = 'none';
+  document.getElementById('div-info-east').style.display = 'inline';
   
   var h  = window.innerWidth * THRESHOLD_LongPortraitFitToWidth;
-  document.getElementById('title-west').style.width = (h/6).toString().concat('px');
-  document.getElementById('title-west').style.height = h.toString().concat('px');
-  document.getElementById('board-area').style.width = h.toString().concat('px');
-  document.getElementById('board-area').style.height = h.toString().concat('px');
-  document.getElementById('info-east').style.width = (window.innerWidth-h*7/6).toString().concat('px');
-  document.getElementById('info-east').style.height = h.toString().concat('px');
+  document.getElementById('div-title-west').style.width = (h/6).toString().concat('px');
+  document.getElementById('div-title-west').style.height = h.toString().concat('px');
+  document.getElementById('div-board-area').style.width = h.toString().concat('px');
+  document.getElementById('div-board-area').style.height = h.toString().concat('px');
+  document.getElementById('div-info-east').style.width = (window.innerWidth-h*7/6).toString().concat('px');
+  document.getElementById('div-info-east').style.height = h.toString().concat('px');
   
   document.getElementById('board-canvas').style.width = h.toString().concat('px');
   document.getElementById('board-canvas').style.height = h.toString().concat('px');
 }
 
 function arrange_LongLandscapeFitToHeight() {
-  document.getElementById('title-north').style.display = 'none';
-  document.getElementById('title-west').style.display = 'inline';
-  document.getElementById('info-south').style.display = 'none';
-  document.getElementById('info-east').style.display = 'inline';
+  document.getElementById('div-title-north').style.display = 'none';
+  document.getElementById('div-title-west').style.display = 'inline';
+  document.getElementById('div-info-south').style.display = 'none';
+  document.getElementById('div-info-east').style.display = 'inline';
   
   var h  = window.innerHeight;
-  document.getElementById('title-west').style.width = (h/6).toString().concat('px');
-  document.getElementById('title-west').style.height = h.toString().concat('px');
-  document.getElementById('board-area').style.width = h.toString().concat('px');
-  document.getElementById('board-area').style.height = h.toString().concat('px');
-  document.getElementById('info-east').style.width = (window.innerWidth-h*7/6).toString().concat('px');
-  document.getElementById('info-east').style.height = h.toString().concat('px');
+  document.getElementById('div-title-west').style.width = (h/6).toString().concat('px');
+  document.getElementById('div-title-west').style.height = h.toString().concat('px');
+  document.getElementById('div-board-area').style.width = h.toString().concat('px');
+  document.getElementById('div-board-area').style.height = h.toString().concat('px');
+  document.getElementById('div-info-east').style.width = (window.innerWidth-h*7/6).toString().concat('px');
+  document.getElementById('div-info-east').style.height = h.toString().concat('px');
   
   document.getElementById('board-canvas').style.width = h.toString().concat('px');
   document.getElementById('board-canvas').style.height = h.toString().concat('px');
