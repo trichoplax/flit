@@ -6,27 +6,29 @@
   <script src="javascript/flit.js"></script>
 </head>
 <body>
-  <div id='div-container-for-title-and-board'>
-    <div id='div-title-west'>
-      <button id='button-logo-west'>LOGO</button>
-      <button id='button-new-game-west'>NEW</button>
-      <button id='button-full-screen-west'>FULL</button>
-    </div>
+  <div id='div-outer-vertical-flexbox'>
     <div id='div-title-north'>
       <button id='button-logo-north'>LOGO</button>
       <button id='button-new-game-north'>NEW</button>
       <button id='button-full-screen-north'>FULL</button>
     </div>
-    <div id='div-board-area'>
-      <canvas id='board-canvas' width='10' height='10'></canvas>
+    <div id='div-inner-horizontal-flexbox'>
+      <div id='div-title-west'>
+        <button id='button-logo-west'>LOGO</button>
+        <button id='button-new-game-west'>NEW</button>
+        <button id='button-full-screen-west'>FULL</button>
+      </div>
+      <div id='div-board-area'>
+        <canvas id='board-canvas' width='10' height='10'></canvas>
+      </div>
+      <div id='div-info-east'>
+        Learn the rules by playing.<br>
+        <a class='code-link' href='https://github.com/phagocyte/flit'>Source code on GitHub.</a>
+      </div>
     </div>
-  </div>
-  <div id='div-info-south'>
-    Learn the rules by playing.<br>
-    <a class='code-link' href='https://github.com/phagocyte/flit'>Source code on GitHub.</a>
-  </div>
-  <div id='div-info-east'>
-    Learn the rules by playing.<br>
-    <a class='code-link' href='https://github.com/phagocyte/flit'>Source code on GitHub.</a>
+    <div id='div-info-south'>
+      Learn the rules by playing.<br>
+      <a class='code-link' href='https://github.com/phagocyte/flit'>Source code on GitHub.</a>
+    </div>
   </div>
 </body>
