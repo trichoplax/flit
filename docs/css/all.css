@@ -3,43 +3,63 @@ body {
   border: 0;
   margin: 0;
 }
-#div-container-for-title-and-board {
+#div-outer-vertical-flexbox {
+  display: flex;
+  flex-direction: column;
   background-color: black;
 }
+#div-inner-horizontal-flexbox {
+  display: flex;
+  flex-direction: row;
+  order: 2;
+  background-color: white;
+}
+#div-title-north {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: stretch;
+  order: 1;
+  background-color: blue;
+}
 #div-title-west {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  order: 1;
   background-color: cyan;
   display: none;
 }
-#div-title-north {
-  background-color: blue;
-}
 #div-board-area {
+  order: 2;
   background-color: grey;
   display: inline;
 }
-#div-info-south {
-  background-color: red;
-}
 #div-info-east {
+  order: 3;
   background-color: pink;
-  float: right;
   display:none;
 }
+#div-info-south {
+  order: 3;
+  background-color: red;
+}
 #button-logo-west{
-  width: 10%;
+  order: 1;
 }
 #button-new-game-west{
-  width: 10%;
+  order: 2;
 }
 #button-full-screen-west{
-  width: 10%;
+  order: 3;
 }
 #button-logo-north{
-  height: 10%;
+  order: 1;
 }
 #button-new-game-north{
-  height: 10%;
+  order: 2;
 }
 #button-full-screen-north{
-  height: 10%;
+  order: 3;
 }
