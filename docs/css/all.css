@@ -1,3 +1,11 @@
+div {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+#container-for-title-and-board {
+  background-color: black;
+}
 #title-west {
   background-color: cyan;
   display: none;
