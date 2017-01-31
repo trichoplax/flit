@@ -15,6 +15,7 @@ body {
 }
 #div-board-area {
   background-color: grey;
+  display: inline;
 }
 #div-info-south {
   background-color: red;
