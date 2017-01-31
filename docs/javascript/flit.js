@@ -169,3 +169,4 @@ function arrange_LongLandscapeFitToHeight() {
 }
 
 window.onresize = reorganise;
+window.onload = reorganise;
