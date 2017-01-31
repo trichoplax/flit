@@ -26,7 +26,7 @@ function reorganise() {
 
 function arrange_LongPortraitFitToWidth() {
   document.getElementById('div-title-west').style.display = 'none';
-  document.getElementById('div-title-north').style.display = 'inline';
+  document.getElementById('div-title-north').style.display = 'flex';
   document.getElementById('div-info-east').style.display = 'none';
   document.getElementById('div-info-south').style.display = 'inline';
   
@@ -44,7 +44,7 @@ function arrange_LongPortraitFitToWidth() {
 
 function arrange_LongPortraitFitToHeight() {
   document.getElementById('div-title-west').style.display = 'none';
-  document.getElementById('div-title-north').style.display = 'inline';
+  document.getElementById('div-title-north').style.display = 'flex';
   document.getElementById('div-info-east').style.display = 'none';
   document.getElementById('div-info-south').style.display = 'inline';
   
@@ -62,7 +62,7 @@ function arrange_LongPortraitFitToHeight() {
 
 function arrange_ShortPortraitFitToWidth() {
   document.getElementById('div-title-north').style.display = 'none';
-  document.getElementById('div-title-west').style.display = 'inline';
+  document.getElementById('div-title-west').style.display = 'flex';
   document.getElementById('div-info-east').style.display = 'none';
   document.getElementById('div-info-south').style.display = 'inline';
   
@@ -80,7 +80,7 @@ function arrange_ShortPortraitFitToWidth() {
 
 function arrange_ShortPortraitFitToHeight() {
   document.getElementById('div-title-north').style.display = 'none';
-  document.getElementById('div-title-west').style.display = 'inline';
+  document.getElementById('div-title-west').style.display = 'flex';
   document.getElementById('div-info-east').style.display = 'none';
   document.getElementById('div-info-south').style.display = 'inline';
   
@@ -98,7 +98,7 @@ function arrange_ShortPortraitFitToHeight() {
 
 function arrange_ShortLandscapeFitToWidth() {
   document.getElementById('div-title-west').style.display = 'none';
-  document.getElementById('div-title-north').style.display = 'inline';
+  document.getElementById('div-title-north').style.display = 'flex';
   document.getElementById('div-info-south').style.display = 'none';
   document.getElementById('div-info-east').style.display = 'inline';
   
@@ -116,7 +116,7 @@ function arrange_ShortLandscapeFitToWidth() {
 
 function arrange_ShortLandscapeFitToHeight() {
   document.getElementById('div-title-west').style.display = 'none';
-  document.getElementById('div-title-north').style.display = 'inline';
+  document.getElementById('div-title-north').style.display = 'flex';
   document.getElementById('div-info-south').style.display = 'none';
   document.getElementById('div-info-east').style.display = 'inline';
   
@@ -134,7 +134,7 @@ function arrange_ShortLandscapeFitToHeight() {
 
 function arrange_LongLandscapeFitToWidth() {
   document.getElementById('div-title-north').style.display = 'none';
-  document.getElementById('div-title-west').style.display = 'inline';
+  document.getElementById('div-title-west').style.display = 'flex';
   document.getElementById('div-info-south').style.display = 'none';
   document.getElementById('div-info-east').style.display = 'inline';
   
@@ -152,7 +152,7 @@ function arrange_LongLandscapeFitToWidth() {
 
 function arrange_LongLandscapeFitToHeight() {
   document.getElementById('div-title-north').style.display = 'none';
-  document.getElementById('div-title-west').style.display = 'inline';
+  document.getElementById('div-title-west').style.display = 'flex';
   document.getElementById('div-info-south').style.display = 'none';
   document.getElementById('div-info-east').style.display = 'inline';
   
