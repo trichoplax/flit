@@ -25,20 +25,20 @@ body {
   display:none;
 }
 #button-logo-west{
-  width: 100%;
+  width: 10%;
 }
 #button-new-game-west{
-  width: 100%;
+  width: 10%;
 }
 #button-full-screen-west{
-  width: 100%;
+  width: 10%;
 }
 #button-logo-north{
-  height: 100%;
+  height: 10%;
 }
 #button-new-game-north{
-  height: 100%;
+  height: 10%;
 }
 #button-full-screen-north{
-  height: 100%;
+  height: 10%;
 }
