@@ -45,21 +45,21 @@ body {
   order: 3;
   background-color: red;
 }
-#button-logo-west{
+#div-logo-west{
   order: 1;
 }
-#button-new-game-west{
+#div-new-game-west{
   order: 2;
 }
-#button-full-screen-west{
+#div-full-screen-west{
   order: 3;
 }
-#button-logo-north{
+#div-logo-north{
   order: 1;
 }
-#button-new-game-north{
+#div-new-game-north{
   order: 2;
 }
-#button-full-screen-north{
+#div-full-screen-north{
   order: 3;
 }
