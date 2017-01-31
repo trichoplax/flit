@@ -31,15 +31,15 @@ function arrange_LongPortraitFitToWidth() {
   document.getElementById('info-south').style.display = 'inline';
   
   var w = window.innerWidth;
-  document.getElementById('title-north').style.width = '100%';
+  document.getElementById('title-north').style.width = w.toString().concat('px');
   document.getElementById('title-north').style.height = (w/6).toString().concat('px');
-  document.getElementById('board-area').style.width = '100%';
-  document.getElementById('board-area').style.height = (w).toString().concat('px');
-  document.getElementById('info-south').style.width = '100%';
+  document.getElementById('board-area').style.width = w.toString().concat('px');
+  document.getElementById('board-area').style.height = w.toString().concat('px');
+  document.getElementById('info-south').style.width = w.toString().concat('px');
   document.getElementById('info-south').style.height = (window.innerHeight-w*7/6).toString().concat('px');
   
-  document.getElementById('board-canvas').style.width = (w).toString().concat('px');
-  document.getElementById('board-canvas').style.height = (w).toString().concat('px');  
+  document.getElementById('board-canvas').style.width = w.toString().concat('px');
+  document.getElementById('board-canvas').style.height = w.toString().concat('px'); 
 }
 
 function arrange_LongPortraitFitToHeight() {
@@ -56,8 +56,8 @@ function arrange_LongPortraitFitToHeight() {
   document.getElementById('info-south').style.width = w.toString().concat('px');
   document.getElementById('info-south').style.height = (window.innerHeight-w*7/6).toString().concat('px');
   
-  document.getElementById('board-canvas').style.width = (w).toString().concat('px');
-  document.getElementById('board-canvas').style.height = (w).toString().concat('px');
+  document.getElementById('board-canvas').style.width = w.toString().concat('px');
+  document.getElementById('board-canvas').style.height = w.toString().concat('px');
 }
 
 function arrange_ShortPortraitFitToWidth() {
