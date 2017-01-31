@@ -47,7 +47,6 @@ body {
 }
 #div-logo-west{
   order: 1;
-  align-self: flex-start;
 }
 #div-new-game-west{
   order: 2;
@@ -57,7 +56,6 @@ body {
 }
 #div-logo-north{
   order: 1;
-  align-self: flex-start;
 }
 #div-new-game-north{
   order: 2;
