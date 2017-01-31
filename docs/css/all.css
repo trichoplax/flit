@@ -3,23 +3,41 @@ div, body {
   border: 0;
   margin: 0;
 }
-#container-for-title-and-board {
+#div-container-for-title-and-board {
   background-color: black;
 }
-#title-west {
+#div-title-west {
   background-color: cyan;
   display: none;
 }
-#title-north {
+#div-title-north {
   background-color: blue;
 }
-#board-area {
+#div-board-area {
   background-color: grey;
 }
-#info-south {
+#div-info-south {
   background-color: red;
 }
-#info-east {
+#div-info-east {
   background-color: pink;
   display:none;
+}
+#button-logo-west{
+  width: 100%;
+}
+#button-new-game-west{
+  width: 100%;
+}
+#button-full-screen-west{
+  width: 100%;
+}
+#button-logo-north{
+  height: 100%;
+}
+#button-new-game-north{
+  height: 100%;
+}
+#button-full-screen-north{
+  height: 100%;
 }
