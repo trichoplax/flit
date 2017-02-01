@@ -48,18 +48,18 @@ body {
 #div-logo-west{
   order: 1;
 }
-#div-new-game-west{
+#button-new-game-west{
   order: 2;
 }
-#div-full-screen-west{
+#button-full-screen-west{
   order: 3;
 }
 #div-logo-north{
   order: 1;
 }
-#div-new-game-north{
+#button-new-game-north{
   order: 2;
 }
-#div-full-screen-north{
+#button-full-screen-north{
   order: 3;
 }
