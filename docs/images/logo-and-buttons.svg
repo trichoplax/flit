@@ -1,3 +1,3 @@
 <svg xmlns='http://www.w3.org/2000/svg'>
-  <rect id='logo' x='10' y='10' width='80' height='80' style='fill:orange; stroke:white; stroke-width:20;' />
+  <rect id='logo' x='20' y='20' width='60' height='60' style='fill:orange; stroke:white; stroke-width:20;' />
 </svg>
