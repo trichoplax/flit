@@ -85,7 +85,7 @@ function arrange_ShortPortraitFitToWidth() {
   document.getElementById('board-canvas').style.width = (w*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (w*6/7).toString().concat('px');
   
-  document.getElementById('div-logo-west').style.height = (w*5/7).toString().concat('px');
+  document.getElementById('div-logo-west').style.height = (w*4/7).toString().concat('px');
   document.getElementById('button-new-game-west').style.height = (w/7).toString().concat('px');
   document.getElementById('button-full-screen-west').style.height = (w/7).toString().concat('px');
 }
@@ -107,7 +107,7 @@ function arrange_ShortPortraitFitToHeight() {
   document.getElementById('board-canvas').style.width = (w*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (w*6/7).toString().concat('px');
   
-  document.getElementById('div-logo-west').style.height = (w*5/7).toString().concat('px');
+  document.getElementById('div-logo-west').style.height = (w*4/7).toString().concat('px');
   document.getElementById('button-new-game-west').style.height = (w/7).toString().concat('px');
   document.getElementById('button-full-screen-west').style.height = (w/7).toString().concat('px');
 }
@@ -129,7 +129,7 @@ function arrange_ShortLandscapeFitToWidth() {
   document.getElementById('board-canvas').style.width = (h*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (h*6/7).toString().concat('px');
   
-  document.getElementById('div-logo-north').style.width = (h*5/7).toString().concat('px');
+  document.getElementById('div-logo-north').style.width = (h*4/7).toString().concat('px');
   document.getElementById('button-new-game-north').style.width = (h/7).toString().concat('px');
   document.getElementById('button-full-screen-north').style.width = (h/7).toString().concat('px');
 }
@@ -151,7 +151,7 @@ function arrange_ShortLandscapeFitToHeight() {
   document.getElementById('board-canvas').style.width = (h*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (h*6/7).toString().concat('px');
   
-  document.getElementById('div-logo-north').style.width = (h*5/7).toString().concat('px');
+  document.getElementById('div-logo-north').style.width = (h*4/7).toString().concat('px');
   document.getElementById('button-new-game-north').style.width = (h/7).toString().concat('px');
   document.getElementById('button-full-screen-north').style.width = (h/7).toString().concat('px');
 }
