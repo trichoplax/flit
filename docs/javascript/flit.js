@@ -39,7 +39,11 @@ function arrange_LongPortraitFitToWidth() {
   document.getElementById('div-info-south').style.height = (window.innerHeight-w*7/6).toString().concat('px');
   
   document.getElementById('board-canvas').style.width = w.toString().concat('px');
-  document.getElementById('board-canvas').style.height = w.toString().concat('px'); 
+  document.getElementById('board-canvas').style.height = w.toString().concat('px');
+  
+  document.getElementById('div-logo-north').style.width = (w*4/6).toString().concat('px');
+  document.getElementById('button-new-game-north').style.width = (w/6).toString().concat('px');
+  document.getElementById('button-full-screen-north').style.width = (w/6).toString().concat('px'); 
 }
 
 function arrange_LongPortraitFitToHeight() {
@@ -58,6 +62,10 @@ function arrange_LongPortraitFitToHeight() {
   
   document.getElementById('board-canvas').style.width = w.toString().concat('px');
   document.getElementById('board-canvas').style.height = w.toString().concat('px');
+  
+  document.getElementById('div-logo-north').style.width = (w*4/6).toString().concat('px');
+  document.getElementById('button-new-game-north').style.width = (w/6).toString().concat('px');
+  document.getElementById('button-full-screen-north').style.width = (w/6).toString().concat('px');
 }
 
 function arrange_ShortPortraitFitToWidth() {
@@ -76,6 +84,10 @@ function arrange_ShortPortraitFitToWidth() {
   
   document.getElementById('board-canvas').style.width = (w*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (w*6/7).toString().concat('px');
+  
+  document.getElementById('div-logo-west').style.height = (w*5/7).toString().concat('px');
+  document.getElementById('button-new-game-west').style.height = (w/7).toString().concat('px');
+  document.getElementById('button-full-screen-west').style.height = (w/7).toString().concat('px');
 }
 
 function arrange_ShortPortraitFitToHeight() {
@@ -94,6 +106,10 @@ function arrange_ShortPortraitFitToHeight() {
   
   document.getElementById('board-canvas').style.width = (w*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (w*6/7).toString().concat('px');
+  
+  document.getElementById('div-logo-west').style.height = (w*5/7).toString().concat('px');
+  document.getElementById('button-new-game-west').style.height = (w/7).toString().concat('px');
+  document.getElementById('button-full-screen-west').style.height = (w/7).toString().concat('px');
 }
 
 function arrange_ShortLandscapeFitToWidth() {
@@ -112,6 +128,10 @@ function arrange_ShortLandscapeFitToWidth() {
   
   document.getElementById('board-canvas').style.width = (h*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (h*6/7).toString().concat('px');
+  
+  document.getElementById('div-logo-north').style.width = (h*5/7).toString().concat('px');
+  document.getElementById('button-new-game-north').style.width = (h/7).toString().concat('px');
+  document.getElementById('button-full-screen-north').style.width = (h/7).toString().concat('px');
 }
 
 function arrange_ShortLandscapeFitToHeight() {
@@ -130,6 +150,10 @@ function arrange_ShortLandscapeFitToHeight() {
   
   document.getElementById('board-canvas').style.width = (h*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (h*6/7).toString().concat('px');
+  
+  document.getElementById('div-logo-north').style.width = (h*5/7).toString().concat('px');
+  document.getElementById('button-new-game-north').style.width = (h/7).toString().concat('px');
+  document.getElementById('button-full-screen-north').style.width = (h/7).toString().concat('px');
 }
 
 function arrange_LongLandscapeFitToWidth() {
@@ -148,6 +172,10 @@ function arrange_LongLandscapeFitToWidth() {
   
   document.getElementById('board-canvas').style.width = h.toString().concat('px');
   document.getElementById('board-canvas').style.height = h.toString().concat('px');
+  
+  document.getElementById('div-logo-west').style.height = (h*4/6).toString().concat('px');
+  document.getElementById('button-new-game-west').style.height = (h/6).toString().concat('px');
+  document.getElementById('button-full-screen-west').style.height = (h/6).toString().concat('px');
 }
 
 function arrange_LongLandscapeFitToHeight() {
@@ -166,6 +194,10 @@ function arrange_LongLandscapeFitToHeight() {
   
   document.getElementById('board-canvas').style.width = h.toString().concat('px');
   document.getElementById('board-canvas').style.height = h.toString().concat('px');
+  
+  document.getElementById('div-logo-west').style.height = (h*4/6).toString().concat('px');
+  document.getElementById('button-new-game-west').style.height = (h/6).toString().concat('px');
+  document.getElementById('button-full-screen-west').style.height = (h/6).toString().concat('px');
 }
 
 window.onresize = reorganise;
