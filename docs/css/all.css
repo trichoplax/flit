@@ -50,16 +50,28 @@ body {
 }
 #button-new-game-west{
   order: 2;
+  padding: 0;
+  border: 0;
+  margin: 0;
 }
 #button-full-screen-west{
   order: 3;
+  padding: 0;
+  border: 0;
+  margin: 0;
 }
 #div-logo-north{
   order: 1;
 }
 #button-new-game-north{
   order: 2;
+  padding: 0;
+  border: 0;
+  margin: 0;
 }
 #button-full-screen-north{
   order: 3;
+  padding: 0;
+  border: 0;
+  margin: 0;
 }
