@@ -4,4 +4,10 @@
   <svg id='new-game-image'>
     <circle cx='50' cy='50' r='40' stroke='green' stroke-width='10' fill='blue' />
   </svg>
+  <svg id='full-screen-expand-image'>
+    <polygon points='10,10 40,10 10,40' style='fill:white stroke:white stroke-width:1' />
+    <polygon points='80,80 50,10 80,40' style='fill:white stroke:white stroke-width:1' />
+    <polygon points='10,80 40,80 10,50' style='fill:white stroke:white stroke-width:1' />
+    <polygon points='80,10 50,10 80,40' style='fill:white stroke:white stroke-width:1' />
+  </svg>
 </svg>
