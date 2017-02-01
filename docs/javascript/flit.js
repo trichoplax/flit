@@ -124,7 +124,7 @@ function arrange_ShortLandscapeFitToWidth() {
   document.getElementById('div-board-area').style.width = (h*6/7).toString().concat('px');
   document.getElementById('div-board-area').style.height = (h*6/7).toString().concat('px');
   document.getElementById('div-info-east').style.width = (window.innerWidth-h*6/7).toString().concat('px');
-  document.getElementById('div-info-east').style.height = h.toString().concat('px');
+  document.getElementById('div-info-east').style.height = (h*6/7).toString().concat('px');
   
   document.getElementById('board-canvas').style.width = (h*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (h*6/7).toString().concat('px');
@@ -146,7 +146,7 @@ function arrange_ShortLandscapeFitToHeight() {
   document.getElementById('div-board-area').style.width = (h*6/7).toString().concat('px');
   document.getElementById('div-board-area').style.height = (h*6/7).toString().concat('px');
   document.getElementById('div-info-east').style.width = (window.innerWidth-h*6/7).toString().concat('px');
-  document.getElementById('div-info-east').style.height = h.toString().concat('px');
+  document.getElementById('div-info-east').style.height = (h*6/7).toString().concat('px');
   
   document.getElementById('board-canvas').style.width = (h*6/7).toString().concat('px');
   document.getElementById('board-canvas').style.height = (h*6/7).toString().concat('px');
