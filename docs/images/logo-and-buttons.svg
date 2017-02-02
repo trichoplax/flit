@@ -1,23 +1,23 @@
 <svg xmlns='http://www.w3.org/2000/svg'>
   <svg id='logo-north-image'>
-    <rect x='0.5' y='0.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='50.5' y='50.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='100.5' y='0.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='150.5' y='50.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='200.5' y='0.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='250.5' y='50.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='300.5' y='0.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='350.5' y='50.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='0.5' y='0.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='50.5' y='50.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='100.5' y='0.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='150.5' y='50.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='200.5' y='0.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='250.5' y='50.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='300.5' y='0.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='350.5' y='50.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
   </svg>
   <svg id='logo-west-image'>
-    <rect x='0.5' y='0.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='50.5' y='50.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='0.5' y='100.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='50.5' y='150.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='0.5' y='200.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='50.5' y='250.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='0.5' y='300.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='50.5' y='350.5' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='0.5' y='0.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='50.5' y='50.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='0.5' y='100.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='50.5' y='150.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='0.5' y='200.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='50.5' y='250.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='0.5' y='300.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='50.5' y='350.5' width='49' height='49' style='fill:purple; stroke:purple; stroke-width:1;' />
   </svg>
   <svg id='new-game-image'>
     <path d='M 18 24
