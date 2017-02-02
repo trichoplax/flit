@@ -6,7 +6,7 @@
              A 80 80 0 0 1 70 10
              A 10 10 0 0 1 80 20
              A 80 80 0 0 1 72 66
-             A 30 30 0 0 1 18 24' stroke='white' fill='white' stroke-width='1' />
+             A 30 30 0 1 1 18 24' stroke='white' fill='white' stroke-width='1' />
   </svg>
   <svg id='full-screen-expand-image'>
     <polygon points='10,10 40,10 10,40' style='fill:white; stroke:white; stroke-width:1;' />
