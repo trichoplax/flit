@@ -200,7 +200,7 @@ function arrange_LongLandscapeFitToHeight() {
   document.getElementById('button-full-screen-west').style.height = (h/6).toString().concat('px');
 }
 
-function toggle-full-screen() {
+function toggle_full_screen() {
   if (!document.fullscreenElement) {
     document.body.requestFullscreen;
   } else {
