@@ -199,6 +199,9 @@ function arrange_LongLandscapeFitToHeight() {
   document.getElementById('button-new-game-west').style.height = (h/6).toString().concat('px');
   document.getElementById('button-full-screen-west').style.height = (h/6).toString().concat('px');
 }
+function toggle-full-screen() {
+  if (!document.fullscreenElement) {document.body.requestFullscreen} else {document.exitFullscreen()}
 
+}
 window.onresize = reorganise;
 window.onload = reorganise;
