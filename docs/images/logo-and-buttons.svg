@@ -1,6 +1,24 @@
 <svg xmlns='http://www.w3.org/2000/svg'>
-  <rect id='logo-north-image' x='4' y='4' width='72' height='12' style='fill:orange; stroke:white; stroke-width:4;' />
-  <rect id='logo-west-image' x='4' y='4' width='12' height='72' style='fill:orange; stroke:white; stroke-width:4;' />
+  <svg id='logo-north-image'>
+    <rect x='0' y='0' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='50' y='50' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='100' y='0' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='150' y='50' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='200' y='0' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='250' y='50' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='300' y='0' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='350' y='50' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+  </svg>
+  <svg id='logo-west-image'>
+    <rect x='0' y='0' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='50' y='50' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='0' y='100' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='50' y='150' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='0' y='200' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='50' y='250' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='0' y='300' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='50' y='350' width='50' height='50' style='fill:purple; stroke:purple; stroke-width:1;' />
+  </svg>
   <svg id='new-game-image'>
     <path d='M 18 24
              A 80 80 0 0 1 70 10
