@@ -203,10 +203,10 @@ function arrange_LongLandscapeFitToHeight() {
 function toggle_full_screen() {
   if (!document.fullscreenElement) {
     alert('Attempting full screen');
-    document.getElementById('div-outer-vertical-flexbox').requestFullscreen();
+    document.getElementById('div-outer-vertical-flexbox').mozRequestFullScreen();
   } else {
     alert('Exiting full screen');
-    document.exitFullscreen();
+    document.mozCancelFullScreen();
   }
 }
 
