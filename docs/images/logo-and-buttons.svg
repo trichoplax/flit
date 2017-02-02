@@ -2,7 +2,11 @@
   <rect id='logo-north-image' x='4' y='4' width='72' height='12' style='fill:orange; stroke:white; stroke-width:4;' />
   <rect id='logo-west-image' x='4' y='4' width='12' height='72' style='fill:orange; stroke:white; stroke-width:4;' />
   <svg id='new-game-image'>
-    <circle cx='50' cy='50' r='40' stroke='green' stroke-width='10' fill='blue' />
+    <path d='M 18 24
+             A 80 80 0 0 1 70 10
+             A 10 10 0 0 1 80 20
+             A 80 80 0 0 1 72 66
+             A 30 30 0 0 1 18 24' stroke='white' fill='white' stroke-width='1' />
   </svg>
   <svg id='full-screen-expand-image'>
     <polygon points='10,10 40,10 10,40' style='fill:white; stroke:white; stroke-width:1;' />
