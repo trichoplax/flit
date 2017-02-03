@@ -200,8 +200,12 @@ function arrange_LongLandscapeFitToHeight() {
   document.getElementById('button-full-screen-west').style.height = (h/6).toString().concat('px');
 }
 
-function toggle_full_screen() {
+function expand_to_full_screen() {
     document.getElementById('div-outer-vertical-flexbox').mozRequestFullScreen();
+}
+
+function contract_from_full_screen() {
+    document.mozCancelFullScreen();
 }
 
 window.onresize = reorganise;
