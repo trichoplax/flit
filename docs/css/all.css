@@ -55,12 +55,20 @@ body {
   border: 0;
   margin: 0;
 }
-#button-full-screen-west{
+#button-full-screen-expand-west{
   order: 3;
   background-color: #999;
   padding: 0;
   border: 0;
   margin: 0;
+}
+#button-full-screen-contract-west{
+  order: 3;
+  background-color: #999;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  display: none;
 }
 #div-logo-north{
   order: 1;
@@ -72,10 +80,18 @@ body {
   border: 0;
   margin: 0;
 }
-#button-full-screen-north{
+#button-full-screen-expand-north{
   order: 3;
   background-color: #999;
   padding: 0;
   border: 0;
   margin: 0;
+}
+#button-full-screen-contract-north{
+  order: 3;
+  background-color: #999;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  display: none;
 }
