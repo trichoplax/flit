@@ -228,10 +228,24 @@ function expand_to_full_screen() {
 }
 
 function contract_from_full_screen() {
-  document.exitFullscreen();
-  document.mozCancelFullScreen();
-  document.webkitExitFullscreen();
-  document.msExitFullscreen();
+  try {
+    document.exitFullscreen();
+  }
+  catch (TypeError) {
+    try {
+      document.mozCancelFullScreen();
+    }
+    catch (TypeError) {
+      try {
+        document.webkitExitFullscreen();
+      }
+      catch (TypeError) {
+        try {
+          document.msExitFullscreen();
+        }
+      }
+    }
+  }
 }
 
 function switch_buttons() {
