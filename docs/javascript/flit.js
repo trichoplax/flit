@@ -212,15 +212,15 @@ function expand_to_full_screen() {
   try {
     document.getElementById('div-outer-vertical-flexbox').requestFullscreen();
   }
-  catch (TypeError) {
+  catch (e) {
     try {
       document.getElementById('div-outer-vertical-flexbox').mozRequestFullScreen();
     }
-    catch (TypeError) {
+    catch (e) {
       try {
         document.getElementById('div-outer-vertical-flexbox').webkitRequestFullscreen();
       }
-      catch (TypeError) {
+      catch (e) {
         document.getElementById('div-outer-vertical-flexbox').msRequestFullscreen();
       }
     }
@@ -231,15 +231,15 @@ function contract_from_full_screen() {
   try {
     document.exitFullscreen();
   }
-  catch (TypeError) {
+  catch (e) {
     try {
       document.mozCancelFullScreen();
     }
-    catch (TypeError) {
+    catch (e) {
       try {
         document.webkitExitFullscreen();
       }
-      catch (TypeError) {
+      catch (e) {
         document.msExitFullscreen();
       }
     }
