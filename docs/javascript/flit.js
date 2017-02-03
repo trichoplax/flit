@@ -209,10 +209,22 @@ function arrange_LongLandscapeFitToHeight() {
 }
 
 function expand_to_full_screen() {
-  document.getElementById('div-outer-vertical-flexbox').requestFullscreen();
-  document.getElementById('div-outer-vertical-flexbox').mozRequestFullScreen();
-  document.getElementById('div-outer-vertical-flexbox').webkitRequestFullscreen();
-  document.getElementById('div-outer-vertical-flexbox').msRequestFullscreen();
+  try {
+    document.getElementById('div-outer-vertical-flexbox').requestFullscreen();
+  }
+  catch (TypeError) {
+    try {
+      document.getElementById('div-outer-vertical-flexbox').mozRequestFullScreen();
+    }
+    catch (TypeError) {
+      try {
+        document.getElementById('div-outer-vertical-flexbox').webkitRequestFullscreen();
+      }
+      catch (TypeError) {
+        document.getElementById('div-outer-vertical-flexbox').msRequestFullscreen();
+      }
+    }
+  }
 }
 
 function contract_from_full_screen() {
