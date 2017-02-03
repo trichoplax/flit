@@ -209,11 +209,17 @@ function arrange_LongLandscapeFitToHeight() {
 }
 
 function expand_to_full_screen() {
+  document.getElementById('div-outer-vertical-flexbox').requestFullscreen();
   document.getElementById('div-outer-vertical-flexbox').mozRequestFullScreen();
+  document.getElementById('div-outer-vertical-flexbox').webkitRequestFullscreen();
+  document.getElementById('div-outer-vertical-flexbox').msRequestFullscreen();
 }
 
 function contract_from_full_screen() {
+  document.exitFullscreen();
   document.mozCancelFullScreen();
+  document.webkitExitFullscreen();
+  document.msExitFullscreen();
 }
 
 function switch_buttons() {
