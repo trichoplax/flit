@@ -201,11 +201,21 @@ function arrange_LongLandscapeFitToHeight() {
 }
 
 function expand_to_full_screen() {
-    document.getElementById('div-outer-vertical-flexbox').mozRequestFullScreen();
+  document.getElementById('button-full-screen-expand-north').style.display= 'none';
+  document.getElementById('button-full-screen-expand-west').style.display= 'none';
+  document.getElementById('button-full-screen-contract-north').style.display= 'inline';
+  document.getElementById('button-full-screen-contract-west').style.display= 'inline';
+  
+  document.getElementById('div-outer-vertical-flexbox').mozRequestFullScreen();
 }
 
 function contract_from_full_screen() {
-    document.mozCancelFullScreen();
+  document.getElementById('button-full-screen-contract-north').style.display= 'none';
+  document.getElementById('button-full-screen-contract-west').style.display= 'none';
+  document.getElementById('button-full-screen-expand-north').style.display= 'inline';
+  document.getElementById('button-full-screen-expand-west').style.display= 'inline';
+  
+  document.mozCancelFullScreen();
 }
 
 window.onresize = reorganise;
