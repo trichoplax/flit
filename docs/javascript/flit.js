@@ -240,9 +240,7 @@ function contract_from_full_screen() {
         document.webkitExitFullscreen();
       }
       catch (TypeError) {
-        try {
-          document.msExitFullscreen();
-        }
+        document.msExitFullscreen();
       }
     }
   }
