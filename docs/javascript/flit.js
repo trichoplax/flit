@@ -43,7 +43,8 @@ function arrange_LongPortraitFitToWidth() {
   
   document.getElementById('div-logo-north').style.width = (w*4/6).toString().concat('px');
   document.getElementById('button-new-game-north').style.width = (w/6).toString().concat('px');
-  document.getElementById('button-full-screen-north').style.width = (w/6).toString().concat('px'); 
+  document.getElementById('button-full-screen-expand-north').style.width = (w/6).toString().concat('px'); 
+  document.getElementById('button-full-screen-contract-north').style.width = (w/6).toString().concat('px'); 
 }
 
 function arrange_LongPortraitFitToHeight() {
@@ -65,7 +66,8 @@ function arrange_LongPortraitFitToHeight() {
   
   document.getElementById('div-logo-north').style.width = (w*4/6).toString().concat('px');
   document.getElementById('button-new-game-north').style.width = (w/6).toString().concat('px');
-  document.getElementById('button-full-screen-north').style.width = (w/6).toString().concat('px');
+  document.getElementById('button-full-screen-expand-north').style.width = (w/6).toString().concat('px');
+  document.getElementById('button-full-screen-contract-north').style.width = (w/6).toString().concat('px');
 }
 
 function arrange_ShortPortraitFitToWidth() {
@@ -87,7 +89,8 @@ function arrange_ShortPortraitFitToWidth() {
   
   document.getElementById('div-logo-west').style.height = (w*4/7).toString().concat('px');
   document.getElementById('button-new-game-west').style.height = (w/7).toString().concat('px');
-  document.getElementById('button-full-screen-west').style.height = (w/7).toString().concat('px');
+  document.getElementById('button-full-screen-expand-west').style.height = (w/7).toString().concat('px');
+  document.getElementById('button-full-screen-contract-west').style.height = (w/7).toString().concat('px');
 }
 
 function arrange_ShortPortraitFitToHeight() {
@@ -109,7 +112,8 @@ function arrange_ShortPortraitFitToHeight() {
   
   document.getElementById('div-logo-west').style.height = (w*4/7).toString().concat('px');
   document.getElementById('button-new-game-west').style.height = (w/7).toString().concat('px');
-  document.getElementById('button-full-screen-west').style.height = (w/7).toString().concat('px');
+  document.getElementById('button-full-screen-expand-west').style.height = (w/7).toString().concat('px');
+  document.getElementById('button-full-screen-contract-west').style.height = (w/7).toString().concat('px');
 }
 
 function arrange_ShortLandscapeFitToWidth() {
@@ -131,7 +135,8 @@ function arrange_ShortLandscapeFitToWidth() {
   
   document.getElementById('div-logo-north').style.width = (h*4/7).toString().concat('px');
   document.getElementById('button-new-game-north').style.width = (h/7).toString().concat('px');
-  document.getElementById('button-full-screen-north').style.width = (h/7).toString().concat('px');
+  document.getElementById('button-full-screen-expand-north').style.width = (h/7).toString().concat('px');
+  document.getElementById('button-full-screen-contract-north').style.width = (h/7).toString().concat('px');
 }
 
 function arrange_ShortLandscapeFitToHeight() {
@@ -153,7 +158,8 @@ function arrange_ShortLandscapeFitToHeight() {
   
   document.getElementById('div-logo-north').style.width = (h*4/7).toString().concat('px');
   document.getElementById('button-new-game-north').style.width = (h/7).toString().concat('px');
-  document.getElementById('button-full-screen-north').style.width = (h/7).toString().concat('px');
+  document.getElementById('button-full-screen-expand-north').style.width = (h/7).toString().concat('px');
+  document.getElementById('button-full-screen-contract-north').style.width = (h/7).toString().concat('px');
 }
 
 function arrange_LongLandscapeFitToWidth() {
@@ -175,7 +181,8 @@ function arrange_LongLandscapeFitToWidth() {
   
   document.getElementById('div-logo-west').style.height = (h*4/6).toString().concat('px');
   document.getElementById('button-new-game-west').style.height = (h/6).toString().concat('px');
-  document.getElementById('button-full-screen-west').style.height = (h/6).toString().concat('px');
+  document.getElementById('button-full-screen-expand-west').style.height = (h/6).toString().concat('px');
+  document.getElementById('button-full-screen-contract-west').style.height = (h/6).toString().concat('px');
 }
 
 function arrange_LongLandscapeFitToHeight() {
@@ -197,7 +204,8 @@ function arrange_LongLandscapeFitToHeight() {
   
   document.getElementById('div-logo-west').style.height = (h*4/6).toString().concat('px');
   document.getElementById('button-new-game-west').style.height = (h/6).toString().concat('px');
-  document.getElementById('button-full-screen-west').style.height = (h/6).toString().concat('px');
+  document.getElementById('button-full-screen-expand-west').style.height = (h/6).toString().concat('px');
+  document.getElementById('button-full-screen-contract-west').style.height = (h/6).toString().concat('px');
 }
 
 function expand_to_full_screen() {
