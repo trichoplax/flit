@@ -8,7 +8,7 @@
     <rect x='25000' y='5000' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='30000' y='0' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='35000' y='5000' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <text style='fill:green;' font-family='Verdana' font-size='4000'>
+    <text style='fill:green;' font-family='Verdana' font-size='6000'>
       <tspan x='2500' y='2500'>F</tspan>
       <tspan x='7500' y='2500'>L</tspan>
       <tspan x='7500' y='7500'>I</tspan>
