@@ -260,6 +260,16 @@ function switch_buttons() {
   }
 }
 
+function new_game() {
+  
+}
+
+function confirm_new_game() {
+  if (confirm('Abandon game and start a new one?')) {
+    new_game()
+  }
+}
+
 window.onresize = reorganise;
 window.onload = reorganise;
 
