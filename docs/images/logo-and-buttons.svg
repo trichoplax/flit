@@ -1,19 +1,17 @@
 <svg xmlns='http://www.w3.org/2000/svg'>
   <svg id='logo-north-image'>
-    <rect x='0' y='0' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='5000' y='5000' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='10000' y='0' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='15000' y='5000' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='20000' y='0' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='25000' y='5000' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='30000' y='0' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='35000' y='5000' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <text style='fill:green;' font-family='Verdana' font-size='6000'>
-      <tspan x='625' y='4375'>F</tspan>
-      <tspan x='5625' y='4375'>L</tspan>
-      <tspan x='5625' y='9375'>I</tspan>
-      <tspan x='10625' y='9375'>T</tspan>
-    </text>
+    <rect x='0' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='5000' y='7000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='10000' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='15000' y='7000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='20000' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='25000' y='7000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='30000' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='35000' y='7000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <polygon points='2000,1000 5000,1000 5000,2000 3000,2000 3000,3000 5000,3000 5000,4000 3000,4000 3000,6000 2000,6000' style='fill:green; stroke:green; stroke-width:1;' />
+    <polygon points='9000,1000 10000,1000 10000,5000 12000,5000 12000,6000 9000,6000' style='fill:green; stroke:green; stroke-width:1;' />
+    <polygon points='9000,8000 12000,8000 12000,9000 11000,9000 11000,12000 12000,12000 12000,13000 9000,13000 9000,12000 10000,12000 10000,9000 9000,9000' style='fill:green; stroke:green; stroke-width:1;' />
+    <polygon points='15000,8000 20000,8000 20000,9000 18000,9000 18000,13000 17000,13000 17000,9000 15000,9000' style='fill:green; stroke:green; stroke-width:1;' />
   </svg>
   <svg id='logo-west-image'>
     <rect x='0' y='0' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
@@ -24,6 +22,10 @@
     <rect x='5000' y='25000' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='0' y='30000' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='5000' y='35000' width='5000' height='5000' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <polygon points='2000,1000 5000,1000 5000,2000 3000,2000 3000,3000 5000,3000 5000,4000 3000,4000 3000,6000 2000,6000' style='fill:green; stroke:green; stroke-width:1;' />
+    <polygon points='2000,8000 3000,8000 3000,12000 5000,12000 5000,13000 2000,13000' style='fill:green; stroke:green; stroke-width:1;' />
+    <polygon points='9000,8000 12000,8000 12000,9000 11000,9000 11000,12000 12000,12000 12000,13000 9000,13000 9000,12000 10000,12000 10000,9000 9000,9000' style='fill:green; stroke:green; stroke-width:1;' />
+    <polygon points='8000,15000 13000,15000 13000,16000 11000,16000 11000,20000 10000,20000 10000,16000 8000,16000' style='fill:green; stroke:green; stroke-width:1;' />
   </svg>
   <svg id='new-game-image'>
     <path d='M 18 24
