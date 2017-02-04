@@ -1,3 +1,5 @@
+# WORK IN PROGRESS. NOT YET PLAYABLE
+
 # flit
 A simple board game.
 
