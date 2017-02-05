@@ -3,7 +3,7 @@ body {
   border: 0;
   margin: 0;
 }
-.tile {
+.foreground {
   z-index: 3;
 }
 #div-outer-vertical-flexbox {
