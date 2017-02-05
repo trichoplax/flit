@@ -1,5 +1,5 @@
 <svg xmlns='http://www.w3.org/2000/svg'>
-  <svg id='logo-north-image'>
+  <svg id='logo-north-image' viewBox='0 0 56000 14000'>
     <rect x='0' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='7000' y='7000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='14000' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
