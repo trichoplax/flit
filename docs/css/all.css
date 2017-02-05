@@ -40,21 +40,33 @@ body {
 }
 #div-box-of-columns {
   z-index: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+.class-column-of-tiles {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+}
+.class-tile {
+  flex: 1;
 }
 #div-info-east {
   order: 3;
   background-color: pink;
-  display:none;
+  display: none;
 }
 #div-info-south {
   order: 3;
   background-color: red;
 }
-#div-logo-west{
+#div-logo-west {
   order: 1;
   flex: 4;
 }
-#button-new-game-west{
+#button-new-game-west {
   order: 2;
   flex: 1;
   background-color: #999;
@@ -62,7 +74,7 @@ body {
   border: 0;
   margin: 0;
 }
-#button-full-screen-expand-west{
+#button-full-screen-expand-west {
   order: 3;
   flex: 1;
   background-color: #999;
@@ -70,7 +82,7 @@ body {
   border: 0;
   margin: 0;
 }
-#button-full-screen-contract-west{
+#button-full-screen-contract-west {
   order: 3;
   flex: 1;
   background-color: #999;
@@ -79,12 +91,11 @@ body {
   margin: 0;
   display: none;
 }
-#div-logo-north{
+#div-logo-north {
   order: 1;
   flex: 4;
-  background-image: url('images/logo-and-buttons.svg#logo-north-image');
 }
-#button-new-game-north{
+#button-new-game-north {
   order: 2;
   flex: 1;
   background-color: #999;
@@ -92,7 +103,7 @@ body {
   border: 0;
   margin: 0;
 }
-#button-full-screen-expand-north{
+#button-full-screen-expand-north {
   order: 3;
   flex: 1;
   background-color: #999;
@@ -100,7 +111,7 @@ body {
   border: 0;
   margin: 0;
 }
-#button-full-screen-contract-north{
+#button-full-screen-contract-north {
   order: 3;
   flex: 1;
   background-color: #999;
