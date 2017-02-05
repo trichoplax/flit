@@ -36,6 +36,10 @@ body {
   background-color: grey;
   display: inline;
 }
+#checkerboard-background {
+  position: absolute;
+  z-index: -1;
+}
 #div-info-east {
   order: 3;
   background-color: pink;
