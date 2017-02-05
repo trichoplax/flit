@@ -3,9 +3,6 @@ body {
   border: 0;
   margin: 0;
 }
-.foreground {
-  z-index: 3;
-}
 #div-outer-vertical-flexbox {
   display: flex;
   flex-direction: column;
@@ -40,6 +37,9 @@ body {
 }
 #checkerboard-background {
   z-index: 2;
+}
+#div-box-of-columns {
+  z-index: 3;
 }
 #div-info-east {
   order: 3;
