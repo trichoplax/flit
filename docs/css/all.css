@@ -44,6 +44,8 @@ body {
   flex-direction: row;
   align-items: stretch;
   position: absolute;
+  left: 0px;
+  top: 0px;
 }
 .class-column-of-tiles {
   display: flex;
