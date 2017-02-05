@@ -36,7 +36,6 @@ body {
   display: inline;
 }
 #checkerboard-background {
-  position: absolute;
   z-index: 2;
 }
 #div-info-east {
