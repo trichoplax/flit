@@ -82,6 +82,7 @@ body {
 #div-logo-north{
   order: 1;
   flex: 4;
+  background-image: url('images/logo-and-buttons.svg#logo-north-image');
 }
 #button-new-game-north{
   order: 2;
