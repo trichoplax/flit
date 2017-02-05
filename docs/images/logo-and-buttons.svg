@@ -61,6 +61,8 @@
              M1,10.5 h12
              M0,11.5 h12' stroke='#555' stroke-dasharray='1' />
   </svg>
+  <svg id='empty-board-square-image' viewBox='0 0 7000 7000'>
+  </svg>
   <svg id='player1-piece-image' viewBox='0 0 7000 7000'>
     <polygon points='3500,0 0,7000 7000,7000' style='fill:green; stroke:green; stroke-width:1;' />
   </svg>
