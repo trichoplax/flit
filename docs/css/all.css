@@ -4,19 +4,19 @@ body {
   margin: 0;
 }
 a:link { 
-  text-align: right; /* Move link away from board to avoid accidentally touching it and discarding a game in progress */
   color: #0f0;
 }
 a:visited {
-  text-align: right;
   color: green;
 }
 a:hover {
-  text-align: right;
   color: green;
 }
 .instructions {
   color: white;
+}
+.link {
+  text-align: right; /* Move link away from board to avoid accidentally touching it and discarding a game in progress */
 }
 #div-outer-vertical-flexbox {
   display: flex;
