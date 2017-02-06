@@ -53,8 +53,13 @@ body {
   align-items: stretch;
   flex: 1;
 }
-.class-tile {
+.class-tile1 {
   flex: 1;
+  background-color: #333;
+}
+.class-tile2 {
+  flex: 1;
+  background-color: #444;
 }
 #div-info-east {
   order: 3;
