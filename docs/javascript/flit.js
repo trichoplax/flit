@@ -200,7 +200,7 @@ class Game {
   constructor() {
     this.restart()
   }
-  restart() {    
+  function restart() {    
     var square, x, y, t;
     this.board = [[0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0],
