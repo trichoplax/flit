@@ -196,37 +196,119 @@ function switch_buttons() {
   }
 }
 
-function place_piece(x, y) {
-  document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';
-}
+class Game {
+  constructor() {
+    this.restart()
+  }
+  restart() {    
+    var square, x, y, t;
+    this.board = [[0,0,0,0,0,0,0,0,0,0,0,0],
+                  [0,0,0,0,0,0,0,0,0,0,0,0],
+                  [0,0,0,0,0,0,0,0,0,0,0,0],
+                  [0,0,0,0,0,0,0,0,0,0,0,0],
+                  [0,0,0,0,0,0,0,0,0,0,0,0],
+                  [0,0,0,0,0,0,0,0,0,0,0,0],
+                  [0,0,0,0,0,0,0,0,0,0,0,0],
+                  [0,0,0,0,0,0,0,0,0,0,0,0],
+                  [0,0,0,0,0,0,0,0,0,0,0,0],
+                  [0,0,0,0,0,0,0,0,0,0,0,0],
+                  [0,0,0,0,0,0,0,0,0,0,0,0],
+                  [0,0,0,0,0,0,0,0,0,0,0,0]
+                 ];
+    this.pieces.player1 = [];
+    this.pieces.player2 = [];
+    this.pieces.neutral = [];
+    this.isolated_squares = [];
+    this.adjacent_squares.player1 = [];
+    this.adjacent_squares.player2 = [];
+    this.highlighted_destination_squares = [];
 
-function make_empty(x, y) {
-  document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
-}
-
-function new_game() {
-  for (y=3;y<9;y++) {
-    for (x=4;x<8;x++){
-      place_piece(x, y);
+    for (y = 0; y <= 11; y++) {
+      for (x = 0; x <= 11; x++) {
+        this.isolated_squares.push([x, y]);
+      }
+    }
+     
+    for (t = 0; t <= 1; t++) {
+      square = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
+      x = square[0];
+      y = square[1];
+      place_player1_piece(x, y);
+      square = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
+      x = square[0];
+      y = square[1];
+      place_player2_piece(x, y);
+    }
+    this.player_to_move = 0;
+  }
+  function place_player1_piece(x, y) {
+    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';
+    remove_isolated_squares(x, y);
+  }
+  function place_player2_piece(x, y) {
+    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player2-piece-image\'></use>';
+    remove_isolated_squares(x, y);
+  }
+  function place_neutral_piece(x, y) {
+    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#neutral-piece-image\'></use>';
+    remove_isolated_squares(x, y);
+  }
+  function highlight_player1_piece(x, y) {
+    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#highlighted-player1-piece-image\'></use>';
+  }
+  function unhighlight_player1_piece(x, y) {
+    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';
+  }
+  function highlight_empty_square(x, y) {
+    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#highlighted-empty-square-image\'></use>';
+  }
+  function unhighlight_empty_square(x, y) {
+    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
+  }
+  function make_square_empty(x, y) {
+    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
+    add_isolated_squares(x, y);
+  }
+  function remove_isolated_squares(x, y) {
+    var location;
+    for (let target of [[x, y]].concat(this.neighbours([x, y])) {
+      location = this.isolated_squares.indexOf(target);
+      if (location > -1) {
+        this.isolated_squares.splice(location, 1);
+      }
     }
   }
-  for (y=4;y<8;y++) {
-    for (x=5;x<7;x++){
-      make_empty(x, y);
+  function add_isolated_squares(x, y) {
+    var location;
+    for (let target of [[x, y]].concat(this.neighbours([x, y])) {
+      location = this.isolated_squares.indexOf(target);
+      if (location === -1) {
+        this.isolated_squares.push(target);
+      }
     }
-  }  
-}
-
-function confirm_new_game() {
-  if (confirm('Abandon game and start a new one?')) {
-    new_game()
+  }
+  function neighbours(x, y) {   // Javascript % currently takes the sign of the dividend rather than the divisor, hence the +12s
+    return [[x, (y - 1 + 12) % 12],
+            [(x - 1 + 12) % 12, y],
+            [(x + 1) % 12, y],
+            [x, (y + 1) % 12]
+           ];
+  }
+  function confirm_new_game() {
+    if (confirm('Abandon game and start a new one?')) {
+      restart();
+    }
   }
 }
 
-window.onresize = reorganise;
-window.onload = reorganise;
+function prepare() {
+  game = new Game();
+  reorganise();
+  document.onfullscreenchange = switch_buttons;
+  document.onmozfullscreenchange = switch_buttons;
+  document.onwebkitfullscreenchange = switch_buttons;
+  document.onmsfullscreenchange = switch_buttons;
+  window.onresize = reorganise;
+}
 
-document.onfullscreenchange = switch_buttons;
-document.onmozfullscreenchange = switch_buttons;
-document.onwebkitfullscreenchange = switch_buttons;
-document.onmsfullscreenchange = switch_buttons;
+window.onload = prepare;
