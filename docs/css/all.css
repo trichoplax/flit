@@ -8,9 +8,11 @@ a:link {
   color: #0f0;
 }
 a:visited {
+  text-align: right;
   color: green;
 }
 a:hover {
+  text-align: right;
   color: green;
 }
 .instructions {
