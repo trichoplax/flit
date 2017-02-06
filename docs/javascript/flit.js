@@ -228,7 +228,8 @@ class Game {
     for (y = 0; y <= 11; y++) {
       for (x = 0; x <= 11; x++) {
         this.isolated_squares.push([x, y]);
-        this.display_empty_square(x, y)
+        this.display_empty_square(x, y);
+        this.place_player1_piece(x, y);
       }
     }
      
