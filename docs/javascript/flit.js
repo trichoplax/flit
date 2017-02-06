@@ -282,7 +282,7 @@ class Game {
   
   remove_isolated_squares(x, y) {
     var location;
-    for (let target of [[x, y]].concat(this.neighbours([x, y])) {
+    for (let target of [[x, y]].concat(this.neighbours([x, y]))) {
       location = this.isolated_squares.indexOf(target);
       if (location > -1) {
         this.isolated_squares.splice(location, 1);
