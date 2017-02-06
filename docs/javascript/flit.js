@@ -321,6 +321,10 @@ class Game {
       this.restart();
     }
   }
+  
+  accept_click(x,y) {
+    alert('That\'s square ' + x + ', ' + y);
+  }
 }
 
 function prepare() {
