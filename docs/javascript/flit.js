@@ -288,6 +288,7 @@ class Game {
     for (let target of [[x, y]].concat(this.neighbours(x, y))) {
       console.log('Checking ' + target);
       location = this.isolated_squares.indexOf(target);
+      console.log('location: ' + location);
       if (location > -1) {
         this.isolated_squares.splice(location, 1);
         console.log('Removing ' + target);
