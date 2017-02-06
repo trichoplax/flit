@@ -283,6 +283,7 @@ class Game {
   }
     
   remove_isolated_squares(x, y) {
+    console.log('remove_isolated_squares called with ' + x + ', ' + y);
     var location;
     for (let target of [[x, y]].concat(this.neighbours([x, y]))) {
       console.log('Checking ' + x + ', ' + y);
