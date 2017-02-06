@@ -237,6 +237,7 @@ class Game {
       x = square[0];
       y = square[1];
       this.place_player1_piece(x, y);
+      console.log('Placing at ' + x + ', ' + y)
       square = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
       x = square[0];
       y = square[1];
@@ -280,8 +281,7 @@ class Game {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
     this.add_isolated_squares(x, y);
   }
-  
-  
+    
   remove_isolated_squares(x, y) {
     var location;
     for (let target of [[x, y]].concat(this.neighbours([x, y]))) {
