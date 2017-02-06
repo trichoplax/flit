@@ -52,11 +52,11 @@ body {
   align-items: stretch;
   flex: 1;
 }
-.class-tile1 {
+.tile1 {
   flex: 1;
   background-color: #333;
 }
-.class-tile2 {
+.tile2 {
   flex: 1;
   background-color: #444;
 }
