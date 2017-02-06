@@ -49,4 +49,16 @@
   <svg id='player1-piece-image' viewBox='0 0 7000 7000'>
     <polygon points='3500,0 0,7000 7000,7000' style='fill:green; stroke:green; stroke-width:1;' />
   </svg>
+  <svg id='player2-piece-image' viewBox='0 0 7000 7000'>
+    <polygon points='3500,6829 7000,4286 5663,171 1337,171 0,4286' style='fill:purple; stroke:purple; stroke-width:1;' />
+  </svg>
+  <svg id='neutral-piece-image' viewBox='0 0 7000 7000'>
+    <polygon points='3500,0 7000,3500 3500,7000 0,3500' style='fill:cyan; stroke:cyan; stroke-width:1;' />
+  </svg>
+  <svg id='highlighted-player1-piece-image' viewBox='0 0 7000 7000'>
+    <polygon points='3500,0 0,7000 7000,7000' style='fill:white; stroke:white; stroke-width:1;' />
+  </svg>
+  <svg id='highlighted-empty-square-image' viewBox='0 0 7000 7000'>
+    <polygon points='0,0 7000,0 7000,7000 7000,0' style='fill:green; stroke:green; stroke-width:1;' />
+  </svg>
 </svg>
