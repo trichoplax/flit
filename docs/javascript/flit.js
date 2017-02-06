@@ -285,6 +285,7 @@ class Game {
   remove_isolated_squares(x, y) {
     console.log('remove_isolated_squares called with ' + x + ', ' + y);
     var location;
+    console.log('isolated_squares: ' + this.isolated_squares);
     for (let target of [[x, y]].concat(this.neighbours(x, y))) {
       console.log('Checking ' + target);
       location = this.isolated_squares.indexOf(target);
