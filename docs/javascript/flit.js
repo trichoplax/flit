@@ -201,7 +201,7 @@ function place_piece(x, y) {
 }
 
 function make_empty(x, y) {
-
+  document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
 }
 
 function new_game() {
