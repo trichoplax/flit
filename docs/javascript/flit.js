@@ -233,25 +233,25 @@ class Game {
       square = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
       x = square[0];
       y = square[1];
-      place_player1_piece(x, y);
+      this.place_player1_piece(x, y);
       square = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
       x = square[0];
       y = square[1];
-      place_player2_piece(x, y);
+      this.place_player2_piece(x, y);
     }
     this.player_to_move = 0;
   }
   function place_player1_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';
-    remove_isolated_squares(x, y);
+    this.remove_isolated_squares(x, y);
   }
   function place_player2_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player2-piece-image\'></use>';
-    remove_isolated_squares(x, y);
+    this.remove_isolated_squares(x, y);
   }
   function place_neutral_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#neutral-piece-image\'></use>';
-    remove_isolated_squares(x, y);
+    this.remove_isolated_squares(x, y);
   }
   function highlight_player1_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#highlighted-player1-piece-image\'></use>';
@@ -267,7 +267,7 @@ class Game {
   }
   function make_square_empty(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
-    add_isolated_squares(x, y);
+    this.add_isolated_squares(x, y);
   }
   function remove_isolated_squares(x, y) {
     var location;
@@ -296,7 +296,7 @@ class Game {
   }
   function confirm_new_game() {
     if (confirm('Abandon game and start a new one?')) {
-      restart();
+      this.restart();
     }
   }
 }
