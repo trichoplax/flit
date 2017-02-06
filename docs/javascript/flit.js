@@ -196,8 +196,25 @@ function switch_buttons() {
   }
 }
 
+function place_piece(x, y) {
+  document.getElementById('div-tile-x0-y0').innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1_piece_image\'></use>';
+}
+
+function make_empty(x, y) {
+
+}
+
 function new_game() {
-  
+  for (y=3;y<9;y++) {
+    for (x=4;x<8;x++){
+      place_piece(x, y);
+    }
+  }
+  for (y=4;y<8;y++) {
+    for (x=5;x<7;x++){
+      make_empty(x, y);
+    }
+  }  
 }
 
 function confirm_new_game() {
