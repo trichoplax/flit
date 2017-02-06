@@ -3,6 +3,9 @@ body {
   border: 0;
   margin: 0;
 }
+button {
+  background-color: black;
+}
 a:link { 
   color: #0f0;
 }
