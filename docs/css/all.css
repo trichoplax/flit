@@ -12,7 +12,6 @@ body {
   display: flex;
   flex-direction: row;
   order: 2;
-  background-color: white;
 }
 #div-title-north {
   display: flex;
@@ -20,7 +19,6 @@ body {
   justify-content: flex-end;
   align-items: stretch;
   order: 1;
-  background-color: blue;
 }
 #div-title-west {
   display: flex;
@@ -28,7 +26,6 @@ body {
   justify-content: flex-end;
   align-items: stretch;
   order: 1;
-  background-color: cyan;
   display: none;
 }
 #div-board-area {
@@ -58,16 +55,14 @@ body {
 }
 .tile2 {
   flex: 1;
-  background-color: #444;
+  background-color: #393939;
 }
 #div-info-east {
   order: 3;
-  background-color: pink;
   display: none;
 }
 #div-info-south {
   order: 3;
-  background-color: red;
 }
 #div-logo-west {
   order: 1;
@@ -76,7 +71,6 @@ body {
 #button-new-game-west {
   order: 2;
   flex: 1;
-  background-color: #999;
   padding: 0;
   border: 0;
   margin: 0;
@@ -84,7 +78,6 @@ body {
 #button-full-screen-expand-west {
   order: 3;
   flex: 1;
-  background-color: #999;
   padding: 0;
   border: 0;
   margin: 0;
@@ -92,7 +85,6 @@ body {
 #button-full-screen-contract-west {
   order: 3;
   flex: 1;
-  background-color: #999;
   padding: 0;
   border: 0;
   margin: 0;
@@ -105,7 +97,6 @@ body {
 #button-new-game-north {
   order: 2;
   flex: 1;
-  background-color: #999;
   padding: 0;
   border: 0;
   margin: 0;
@@ -113,7 +104,6 @@ body {
 #button-full-screen-expand-north {
   order: 3;
   flex: 1;
-  background-color: #999;
   padding: 0;
   border: 0;
   margin: 0;
@@ -121,7 +111,6 @@ body {
 #button-full-screen-contract-north {
   order: 3;
   flex: 1;
-  background-color: #999;
   padding: 0;
   border: 0;
   margin: 0;
