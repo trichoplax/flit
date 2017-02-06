@@ -3,6 +3,19 @@ body {
   border: 0;
   margin: 0;
 }
+a:link { 
+  text-align: right; /* Move link away from board to avoid accidentally touching it and discarding a game in progress */
+  color: #0f0;
+}
+a:visited {
+  color: green;
+}
+a:hover {
+  color: green;
+}
+.instructions {
+  color: white;
+}
 #div-outer-vertical-flexbox {
   display: flex;
   flex-direction: column;
