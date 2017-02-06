@@ -274,7 +274,7 @@ class Game {
   }
   
   display_empty_square(x, y) {
-    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';//'';
+    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';//<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';//'';
   }
   
   make_square_empty(x, y) {
