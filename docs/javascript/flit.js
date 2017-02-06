@@ -228,6 +228,7 @@ class Game {
     for (y = 0; y <= 11; y++) {
       for (x = 0; x <= 11; x++) {
         this.isolated_squares.push([x, y]);
+        this.display_empty_square(x, y)
       }
     }
      
@@ -271,7 +272,7 @@ class Game {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#highlighted-empty-square-image\'></use>';
   }
   
-  unhighlight_empty_square(x, y) {
+  display_empty_square(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
   }
   
@@ -279,6 +280,7 @@ class Game {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
     this.add_isolated_squares(x, y);
   }
+  
   
   remove_isolated_squares(x, y) {
     var location;
