@@ -3,48 +3,44 @@
     <rect x='0' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='7000' y='7000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='14000' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='21000' y='7000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='28000' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='35000' y='7000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='42000' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='49000' y='7000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='0' y='7000' width='7000' height='7000' style='fill:green; stroke:green; stroke-width:1;' />
+    <rect x='7000' y='0' width='7000' height='7000' style='fill:green; stroke:green; stroke-width:1;' />
+    <rect x='14000' y='7000' width='7000' height='7000' style='fill:green; stroke:green; stroke-width:1;' />
     <polygon points='2000,1000 5000,1000 5000,2000 3000,2000 3000,3000 5000,3000 5000,4000 3000,4000 3000,6000 2000,6000' style='fill:green; stroke:green; stroke-width:1;' />
-    <polygon points='9000,1000 10000,1000 10000,5000 12000,5000 12000,6000 9000,6000' style='fill:green; stroke:green; stroke-width:1;' />
+    <polygon points='9000,1000 10000,1000 10000,5000 12000,5000 12000,6000 9000,6000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <polygon points='9000,8000 12000,8000 12000,9000 11000,9000 11000,12000 12000,12000 12000,13000 9000,13000 9000,12000 10000,12000 10000,9000 9000,9000' style='fill:green; stroke:green; stroke-width:1;' />
-    <polygon points='15000,8000 20000,8000 20000,9000 18000,9000 18000,13000 17000,13000 17000,9000 15000,9000' style='fill:green; stroke:green; stroke-width:1;' />
+    <polygon points='15000,8000 20000,8000 20000,9000 18000,9000 18000,13000 17000,13000 17000,9000 15000,9000' style='fill:purple; stroke:purple; stroke-width:1;' />
   </svg>
   <svg id='logo-west-image' viewBox='0 0 14000 56000'>
     <rect x='0' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='7000' y='7000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='0' y='14000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='7000' y='21000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='0' y='28000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='7000' y='35000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='0' y='42000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
-    <rect x='7000' y='49000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
+    <rect x='7000' y='0' width='7000' height='7000' style='fill:green; stroke:green; stroke-width:1;' />
+    <rect x='0' y='7000' width='7000' height='7000' style='fill:green; stroke:green; stroke-width:1;' />
+    <rect x='7000' y='14000' width='7000' height='7000' style='fill:green; stroke:green; stroke-width:1;' />
     <polygon points='2000,1000 5000,1000 5000,2000 3000,2000 3000,3000 5000,3000 5000,4000 3000,4000 3000,6000 2000,6000' style='fill:green; stroke:green; stroke-width:1;' />
-    <polygon points='2000,8000 3000,8000 3000,12000 5000,12000 5000,13000 2000,13000' style='fill:green; stroke:green; stroke-width:1;' />
+    <polygon points='2000,8000 3000,8000 3000,12000 5000,12000 5000,13000 2000,13000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <polygon points='9000,8000 12000,8000 12000,9000 11000,9000 11000,12000 12000,12000 12000,13000 9000,13000 9000,12000 10000,12000 10000,9000 9000,9000' style='fill:green; stroke:green; stroke-width:1;' />
-    <polygon points='8000,15000 13000,15000 13000,16000 11000,16000 11000,20000 10000,20000 10000,16000 8000,16000' style='fill:green; stroke:green; stroke-width:1;' />
+    <polygon points='8000,15000 13000,15000 13000,16000 11000,16000 11000,20000 10000,20000 10000,16000 8000,16000' style='fill:purple; stroke:purple; stroke-width:1;' />
   </svg>
   <svg id='new-game-image' viewBox='0 0 90 90'>
     <path d='M 18 24
              A 80 80 0 0 1 70 10
              A 10 10 0 0 1 80 20
              A 80 80 0 0 1 72 66
-             A 30 30 0 1 1 18 24' stroke='white' fill='white' stroke-width='1' />
+             A 30 30 0 1 1 18 24' stroke='gray' fill='gray' stroke-width='1' />
   </svg>
   <svg id='full-screen-expand-image' viewBox='0 0 90 90'>
-    <polygon points='10,10 40,10 10,40' style='fill:white; stroke:white; stroke-width:1;' />
-    <polygon points='80,80 50,80 80,50' style='fill:white; stroke:white; stroke-width:1;' />
-    <polygon points='10,80 40,80 10,50' style='fill:white; stroke:white; stroke-width:1;' />
-    <polygon points='80,10 50,10 80,40' style='fill:white; stroke:white; stroke-width:1;' />
+    <polygon points='10,10 40,10 10,40' style='fill:gray; stroke:gray; stroke-width:1;' />
+    <polygon points='80,80 50,80 80,50' style='fill:gray; stroke:gray; stroke-width:1;' />
+    <polygon points='10,80 40,80 10,50' style='fill:gray; stroke:gray; stroke-width:1;' />
+    <polygon points='80,10 50,10 80,40' style='fill:gray; stroke:gray; stroke-width:1;' />
   </svg>
   <svg id='full-screen-contract-image' viewBox='0 0 90 90'>
-    <polygon points='40,40 40,10 10,40' style='fill:white; stroke:white; stroke-width:1;' />
-    <polygon points='50,50 50,80 80,50' style='fill:white; stroke:white; stroke-width:1;' />
-    <polygon points='40,50 40,80 10,50' style='fill:white; stroke:white; stroke-width:1;' />
-    <polygon points='50,40 50,10 80,40' style='fill:white; stroke:white; stroke-width:1;' />
+    <polygon points='40,40 40,10 10,40' style='fill:gray; stroke:gray; stroke-width:1;' />
+    <polygon points='50,50 50,80 80,50' style='fill:gray; stroke:gray; stroke-width:1;' />
+    <polygon points='40,50 40,80 10,50' style='fill:gray; stroke:gray; stroke-width:1;' />
+    <polygon points='50,40 50,10 80,40' style='fill:gray; stroke:gray; stroke-width:1;' />
   </svg>
   <svg id='player1-piece-image' viewBox='0 0 7000 7000'>
     <polygon points='3500,469 0,6531 7000,6531' style='fill:green; stroke:green; stroke-width:1;' />
