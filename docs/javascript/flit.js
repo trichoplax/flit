@@ -197,10 +197,12 @@ function switch_buttons() {
 }
 
 class Game {
+  
   constructor() {
-    this.restart()
+    this.restart();
   }
-  function restart() {    
+  
+  restart() {    
     var square, x, y, t;
     this.board = [[0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0],
@@ -241,35 +243,44 @@ class Game {
     }
     this.player_to_move = 0;
   }
-  function place_player1_piece(x, y) {
+  
+  place_player1_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';
     this.remove_isolated_squares(x, y);
   }
-  function place_player2_piece(x, y) {
+  
+  place_player2_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player2-piece-image\'></use>';
     this.remove_isolated_squares(x, y);
   }
-  function place_neutral_piece(x, y) {
+  
+  place_neutral_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#neutral-piece-image\'></use>';
     this.remove_isolated_squares(x, y);
   }
-  function highlight_player1_piece(x, y) {
+  
+  highlight_player1_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#highlighted-player1-piece-image\'></use>';
   }
-  function unhighlight_player1_piece(x, y) {
+  
+  unhighlight_player1_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';
   }
-  function highlight_empty_square(x, y) {
+  
+  highlight_empty_square(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#highlighted-empty-square-image\'></use>';
   }
-  function unhighlight_empty_square(x, y) {
+  
+  unhighlight_empty_square(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
   }
-  function make_square_empty(x, y) {
+  
+  make_square_empty(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
     this.add_isolated_squares(x, y);
   }
-  function remove_isolated_squares(x, y) {
+  
+  remove_isolated_squares(x, y) {
     var location;
     for (let target of [[x, y]].concat(this.neighbours([x, y])) {
       location = this.isolated_squares.indexOf(target);
@@ -278,7 +289,8 @@ class Game {
       }
     }
   }
-  function add_isolated_squares(x, y) {
+
+  add_isolated_squares(x, y) {
     var location;
     for (let target of [[x, y]].concat(this.neighbours([x, y])) {
       location = this.isolated_squares.indexOf(target);
@@ -287,14 +299,16 @@ class Game {
       }
     }
   }
-  function neighbours(x, y) {   // Javascript % currently takes the sign of the dividend rather than the divisor, hence the +12s
+
+  neighbours(x, y) {   // Javascript % currently takes the sign of the dividend rather than the divisor, hence the +12s
     return [[x, (y - 1 + 12) % 12],
             [(x - 1 + 12) % 12, y],
             [(x + 1) % 12, y],
             [x, (y + 1) % 12]
            ];
   }
-  function confirm_new_game() {
+
+  confirm_new_game() {
     if (confirm('Abandon game and start a new one?')) {
       this.restart();
     }
