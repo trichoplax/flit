@@ -197,7 +197,7 @@ function switch_buttons() {
 }
 
 function place_piece(x, y) {
-  document.getElementById('div-tile-x0-y0').innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1_piece_image\'></use>';
+  document.getElementById('div-tile-x0-y0').innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';
 }
 
 function make_empty(x, y) {
