@@ -217,12 +217,12 @@ class Game {
                   [0,0,0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0,0,0]
                  ];
-    this.pieces.player1 = [];
-    this.pieces.player2 = [];
-    this.pieces.neutral = [];
+    this.player1_pieces = [];
+    this.player2_pieces = [];
+    this.neutral_pieces = [];
     this.isolated_squares = [];
-    this.adjacent_squares.player1 = [];
-    this.adjacent_squares.player2 = [];
+    this.player1_adjacent_squares = [];
+    this.player2_adjacent_squares = [];
     this.highlighted_destination_squares = [];
 
     for (y = 0; y <= 11; y++) {
