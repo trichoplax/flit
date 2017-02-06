@@ -302,8 +302,11 @@ class Game {
 }
 
 function prepare() {
+  console.log('About to prepare');
   game = new Game();
+  console.log('New game made');
   reorganise();
+  console.log('Reorganised');
   document.onfullscreenchange = switch_buttons;
   document.onmozfullscreenchange = switch_buttons;
   document.onwebkitfullscreenchange = switch_buttons;
@@ -311,4 +314,6 @@ function prepare() {
   window.onresize = reorganise;
 }
 
+console.log('Javascript reached end');
 window.onload = prepare;
+console.log('onload event assigned');
