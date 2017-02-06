@@ -286,11 +286,11 @@ class Game {
     console.log('remove_isolated_squares called with ' + x + ', ' + y);
     var location;
     for (let target of [[x, y]].concat(this.neighbours([x, y]))) {
-      console.log('Checking ' + x + ', ' + y);
+      console.log('Checking ' + target);
       location = this.isolated_squares.indexOf(target);
       if (location > -1) {
         this.isolated_squares.splice(location, 1);
-        console.log('Removing ' + x + ', ' + y);
+        console.log('Removing ' + target);
       }
     }
   }
