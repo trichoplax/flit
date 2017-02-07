@@ -443,10 +443,22 @@ class Game {
     this.place_player1_piece(x, y);
     var location = this.theIndexOf(this.player1_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player1_pieces.splice(location, 1);
-    this.player_to_move = 1;
+    this.switch_player_to_move();
     this.make_computer_move();
   }
   
+  switch_player_to_move() {
+    this.player_to_move = 1 - this.player_to_move;
+    this.maybe_add_neutral_piece();
+  }
+  
+  maybe_add_neutral_piece() {
+    if (Math.floor(Math.random()*6) === 0) {
+      var destination = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
+      this.place_neutral_piece(destination[0], destination[1]);
+    }
+  }
+    
   make_computer_move() {
     var piece = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
     this.selected_piece_x = piece[0];
@@ -474,7 +486,7 @@ class Game {
     this.place_player2_piece(x, y);
     var location = this.theIndexOf(this.player2_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player2_pieces.splice(location, 1);
-    this.player_to_move = 0;
+    this.switch_player_to_move();
   }
   
 }
