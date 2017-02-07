@@ -18,6 +18,7 @@ a:hover {
 }
 .instructions {
   color: white;
+  font-family: Verdana, Arial, sans-serif;
 }
 .link {
   text-align: right; /* Move link away from board to avoid accidentally touching it and discarding a game in progress */
