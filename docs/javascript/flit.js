@@ -403,7 +403,7 @@ class Game {
     this.is_piece_selected = true;
     this.selected_piece_x = x;
     this.selected_piece_y = y;
-    this.board[x][y] = this.SELECTED_PLAYER1_PIECE;
+    this.highlight_player1_piece(x, y);
     
     this.highlight_player1_destination_squares(x, y);
   }
