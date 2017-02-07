@@ -321,17 +321,17 @@ class Game {
     }
   }
   
-  theIndexOf(array_of_arrays, target_array) {
+  theIndexOf(array_of_coords, target_coords) {
     var array_of_strings = [];
-    for (let coords of array_of_arrays) {
+    for (let coords of array_of_coords) {
       array_of_strings.push(this.stringed(coords));
     }
-    var target_string = this.stringed(target_array);
+    var target_string = this.stringed(target_coords);
     return array_of_strings.indexOf(target_string);
   }
   
-  stringed(couple_to_convert) {
-    return couple_to_convert[0] + ',' + couple_to_convert[1];
+  stringed(coords) {
+    return coords[0] + ',' + coords[1];
   }
 
   neighbours(x, y) {   // Javascript % currently takes the sign of the dividend rather than the divisor, hence the +12s
