@@ -462,9 +462,11 @@ class Game {
   }
   
   maybe_add_neutral_piece() {
-    if (Math.floor(Math.random()*6) === 0) {
-      var destination = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
-      this.place_neutral_piece(destination[0], destination[1]);
+    if (this.isolated_squares.length > 0) {
+      if (Math.floor(Math.random()*6) === 0) {
+        var destination = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
+        this.place_neutral_piece(destination[0], destination[1]);
+      }
     }
   }
     
