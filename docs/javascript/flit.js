@@ -370,10 +370,10 @@ class Game {
       var piece_type = this.board[x][y];
       if (this.is_piece_selected) {
         switch (piece_type) {
-          case SELECTED_PLAYER1_PIECE:
+          case this.SELECTED_PLAYER1_PIECE:
             this.deselect_player1_piece(x, y);
             break;
-          case HIGHLIGHTED_EMPTY_SQUARE:
+          case this.HIGHLIGHTED_EMPTY_SQUARE:
             this.move_player1_piece(x, y);
             break;
           default:
@@ -381,7 +381,7 @@ class Game {
         }
       } else {
         switch (piece_type) {
-          case PLAYER1_PIECE:
+          case this.PLAYER1_PIECE:
             this.select_player1_piece(x, y);
             break;
           default:
