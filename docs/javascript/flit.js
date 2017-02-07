@@ -268,43 +268,43 @@ class Game {
   place_player1_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';
     this.remove_isolated_squares(x, y);
-    this.board(x, y) = this.PLAYER1_PIECE;
+    this.board[x][y] = this.PLAYER1_PIECE;
     this.player1_pieces.push([x, y]);
   }
   
   place_player2_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player2-piece-image\'></use>';
     this.remove_isolated_squares(x, y);
-    this.board(x, y) = this.PLAYER2_PIECE;
+    this.board[x][y] = this.PLAYER2_PIECE;
     this.player2_pieces.push([x, y]);
   }
   
   place_neutral_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#neutral-piece-image\'></use>';
     this.remove_isolated_squares(x, y);
-    this.board(x, y) = this.NEUTRAL_PIECE;
+    this.board[x][y] = this.NEUTRAL_PIECE;
     this.neutral_pieces.push([x, y]);
   }
   
   highlight_player1_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#highlighted-player1-piece-image\'></use>';
-    this.board(x, y) = this.SELECTED_PLAYER1_PIECE;
+    this.board[x][y] = this.SELECTED_PLAYER1_PIECE;
   }
   
   unhighlight_player1_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';
-    this.board(x, y) = this.PLAYER1_PIECE;
+    this.board[x][y] = this.PLAYER1_PIECE;
   }
   
   highlight_empty_square(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#highlighted-empty-square-image\'></use>';
-    this.highlighted_destination_squares.push(x, y);
-    this.board(x, y) = this.HIGHLIGHTED_EMPTY_SQUARE;
+    this.highlighted_destination_squares.push([x, y]);
+    this.board[x][y] = this.HIGHLIGHTED_EMPTY_SQUARE;
   }
   
   display_empty_square(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
-    this.board(x, y) = this.EMPTY_SQUARE;
+    this.board[x][y] = this.EMPTY_SQUARE;
   }
   
   make_square_empty(x, y) {
@@ -367,7 +367,7 @@ class Game {
   
   accept_click(x, y) {
     if (this.player_to_move === 0) {
-      piece_type = this.board(x, y);
+      piece_type = this.board[x][y];
       if (this.is_piece_selected) {
         switch (piece_type) {
           case SELECTED_PLAYER1_PIECE:
@@ -399,7 +399,7 @@ class Game {
     this.is_piece_selected = true;
     this.selected_piece_x = x;
     this.selected_piece_y = y;
-    this.board(x, y) = this.SELECTED_PLAYER1_PIECE;
+    this.board[x][y] = this.SELECTED_PLAYER1_PIECE;
     
     this.highlight_player1_destination_squares(x, y);
   }
@@ -408,7 +408,7 @@ class Game {
     for (let piece of this.player1_pieces) {
       if !(piece[0] === x && piece[1] === y) {
         for (let square of this.neighbours(x, y)) {
-          if this.board(square[0], square[1]) === this.EMPTY_SQUARE {
+          if this.board[square[0]][square[1]] === this.EMPTY_SQUARE {
             this.highlight_empty_square(square[0], square[1]);
           }
         }
@@ -418,7 +418,7 @@ class Game {
   
   deselect_player1_piece(x, y) {
     this.is_piece_selected = false;
-    this.board(x, y) = this.PLAYER1_PIECE;
+    this.board[x][y] = this.PLAYER1_PIECE;
     this.remove_highlighting_of_squares()
   }
   
