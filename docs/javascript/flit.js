@@ -427,10 +427,10 @@ class Game {
   }
   
   remove_highlighting_of_squares() {
-    for (let square of this.highlighted_empty_squares) {
+    for (let square of this.highlighted_destination_squares) {
       this.display_empty_square(square[0], square[1]);
     }
-    this.highlighted_empty_squares = [];
+    this.highlighted_destination_squares = [];
   }
   
   move_player1_piece(x, y) { 
