@@ -69,11 +69,11 @@ a:hover {
 }
 .tile1 {
   flex: 1;
-  background-color: #330;
+  background-color: #320;
 }
 .tile2 {
   flex: 1;
-  background-color: #393900;
+  background-color: #392900;
 }
 #div-info-east {
   order: 3;
