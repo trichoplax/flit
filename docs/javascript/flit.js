@@ -10,7 +10,7 @@ const THRESHOLD_ShortPortraitFitToHeight = 1;
 const THRESHOLD_ShortLandscapeFitToWidth = (270+73)/(45+270);
 const THRESHOLD_ShortLandscapeFitToHeight = (45+270+73)/(45+270);
 const THRESHOLD_LongLandscapeFitToWidth = (45+270+73)/270;
-const FONT_RATIO = 1/18;
+const FONT_RATIO = 1/24;
 
 function reorganise() {
   ratio = window.innerWidth / window.innerHeight;
