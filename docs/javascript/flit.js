@@ -471,10 +471,15 @@ class Game {
   }
     
   make_computer_move() {
-    var piece = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
-    this.selected_piece_x = piece[0];
-    this.selected_piece_y = piece[1];
-    this.select_player2_destination_squares(piece[0], piece[1]);
+    while (true) {
+      var piece = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
+      this.selected_piece_x = piece[0];
+      this.selected_piece_y = piece[1];
+      this.select_player2_destination_squares(piece[0], piece[1]);
+      if (this.highlighted_destination_squares.length > 0) {
+        break;
+      }
+    }
     var destination = this.highlighted_destination_squares[Math.floor(Math.random() * this.highlighted_destination_squares.length)];
     this.move_player2_piece(destination[0], destination[1]);
   }
