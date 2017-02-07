@@ -244,6 +244,7 @@ class Game {
     this.selected_piece_x = 0;
     this.selected_piece_y = 0;
     this.player_to_move = 0;
+    this.game_over = false;
 
     for (y = 0; y <= 11; y++) {
       for (x = 0; x <= 11; x++) {
@@ -377,7 +378,7 @@ class Game {
   }
   
   accept_click(x, y) {
-    if (this.player_to_move === 0) {
+    if (this.player_to_move === 0 && this.game_over === false) {
       var piece_type = this.board[x][y];
       if (this.is_piece_selected) {
         switch (piece_type) {
@@ -459,6 +460,46 @@ class Game {
   switch_player_to_move() {
     this.player_to_move = 1 - this.player_to_move;
     this.maybe_add_neutral_piece();
+    this.check_for_game_over();
+  }
+  
+  check_for_game_over() {
+    var pieces
+    if (this.player_to_move === 0) {
+      pieces = this.player1_pieces;
+    } else {
+      pieces = this.player2_pieces;
+    }
+    if (this.no_empty_neighbours(pieces)) {
+      this.game_over();
+    }
+  }
+  
+  no_empty_neighbours(pieces) {
+    for (let piece of pieces) {
+      if (!this.is_boxed_in(pieces[0], pieces[1])) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  is_boxed_in(x, y) {
+    for (let square of this.neighbours(x, y)) {
+      if (this.board[square[0]][square[1]] === this.EMPTY_SQUARE) {
+        return false;
+      }      
+    }
+    return true;
+  }
+  
+  game_over() {
+    if (this.player_to_move === 0) {
+      alert('You lost.');
+    } else {
+      alert('You won!');
+    }
+    this.game_over = true;
   }
   
   maybe_add_neutral_piece() {
