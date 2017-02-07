@@ -208,6 +208,13 @@ function switch_buttons() {
 class Game {
   
   constructor() {
+    this.EMPTY_SQUARE = 0;
+    this.PLAYER1_PIECE = 1;
+    this.PLAYER2_PIECE = 2;
+    this.NEUTRAL_PIECE = 3;
+    this.SELECTED_PLAYER1_PIECE = 4;
+    this.HIGHLIGHTED_EMPTY_SQUARE = 5;
+    
     this.restart();
   }
   
@@ -234,7 +241,6 @@ class Game {
     this.player2_adjacent_squares = [];
     this.highlighted_destination_squares = [];
     this.is_piece_selected = false;
-    this.selected_piece_index = 0;
     this.selected_piece_x = 0;
     this.selected_piece_y = 0;
     this.player_to_move = 0;
@@ -262,36 +268,47 @@ class Game {
   place_player1_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';
     this.remove_isolated_squares(x, y);
+    this.board(x, y) = this.PLAYER1_PIECE;
+    this.player1_pieces.push([x, y]);
   }
   
   place_player2_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player2-piece-image\'></use>';
     this.remove_isolated_squares(x, y);
+    this.board(x, y) = this.PLAYER2_PIECE;
+    this.player2_pieces.push([x, y]);
   }
   
   place_neutral_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#neutral-piece-image\'></use>';
     this.remove_isolated_squares(x, y);
+    this.board(x, y) = this.NEUTRAL_PIECE;
+    this.neutral_pieces.push([x, y]);
   }
   
   highlight_player1_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#highlighted-player1-piece-image\'></use>';
+    this.board(x, y) = this.SELECTED_PLAYER1_PIECE;
   }
   
   unhighlight_player1_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';
+    this.board(x, y) = this.PLAYER1_PIECE;
   }
   
   highlight_empty_square(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#highlighted-empty-square-image\'></use>';
+    this.highlighted_destination_squares.push(x, y);
+    this.board(x, y) = this.HIGHLIGHTED_EMPTY_SQUARE;
   }
   
   display_empty_square(x, y) {
-    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';//<use xlink:href=\'images/logo-and-buttons.svg#player1-piece-image\'></use>';//'';
+    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
+    this.board(x, y) = this.EMPTY_SQUARE;
   }
   
   make_square_empty(x, y) {
-    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '';
+    this.display_empty_square(x, y);
     this.add_isolated_squares(x, y);
   }
     
@@ -348,9 +365,75 @@ class Game {
     }
   }
   
-  accept_click(x,y) {
-    alert('That\'s square ' + x + ', ' + y);
+  accept_click(x, y) {
+    if (this.player_to_move === 0) {
+      piece_type = this.board(x, y);
+      if (this.is_piece_selected) {
+        switch piece_type {
+          case SELECTED_PLAYER1_PIECE:
+            this.deselect_player1_piece(x, y);
+          case HIGHLIGHTED_EMPTY_SQUARE:
+            this.move_player1_piece(x, y);
+          default:
+            this.warning();
+        }
+      } else {
+        switch piece_type {
+          case PLAYER1_PIECE:
+            this.select_player1_piece(x, y);
+          default:
+            this.warning();
+        }
+      }
+    }
   }
+  
+  warning() {
+    
+  }
+  
+  select_player1_piece(x, y) {
+    this.is_piece_selected = true;
+    this.selected_piece_x = x;
+    this.selected_piece_y = y;
+    this.board(x, y) = this.SELECTED_PLAYER1_PIECE;
+    
+    this.highlight_player1_destination_squares(x, y);
+  }
+  
+  highlight_player1_destination_squares(x, y) {
+    for (let piece of this.player1_pieces) {
+      if !(piece[0] === x && piece[1] === y) {
+        for (let square of this.neighbours(x, y)) {
+          if this.board(square[0], square[1]) === this.EMPTY_SQUARE {
+            this.highlight_empty_square(square[0], square[1]);
+          }
+        }
+      }
+    }
+  }
+  
+  deselect_player1_piece(x, y) {
+    this.is_piece_selected = false;
+    this.board(x, y) = this.PLAYER1_PIECE;
+    this.remove_highlighting_of_squares()
+  }
+  
+  remove_highlighting_of_squares() {
+    for (let square of this.highlighted_empty_squares) {
+      this.display_empty_square(square[0], square[1]);
+    }
+    this.highlighted_empty_squares = [];
+  }
+  
+  move_player1_piece(x, y) { 
+    this.deselect_player1_piece(this.selected_piece_x, this.selected_piece_y);
+    this.make_square_empty(this.selected_piece_x, this.selected_piece_y);
+    this.place_player1_piece(x, y);
+    var location = this.theIndexOf(this.player1_pieces, [this.selected_piece_x, this.selected_piece_y]);
+    this.player1_pieces.splice(location, 1);
+  }
+
 }
 
 function prepare() {
