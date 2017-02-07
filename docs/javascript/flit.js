@@ -10,6 +10,7 @@ const THRESHOLD_ShortPortraitFitToHeight = 1;
 const THRESHOLD_ShortLandscapeFitToWidth = (270+73)/(45+270);
 const THRESHOLD_ShortLandscapeFitToHeight = (45+270+73)/(45+270);
 const THRESHOLD_LongLandscapeFitToWidth = (45+270+73)/270;
+const FONT_RATIO = 1/36;
 
 function reorganise() {
   ratio = window.innerWidth / window.innerHeight;
@@ -37,6 +38,7 @@ function arrange_LongPortraitFitToWidth() {
   document.getElementById('div-board-area').style.height = w.toString().concat('px');
   document.getElementById('div-info-south').style.width = w.toString().concat('px');
   document.getElementById('div-info-south').style.height = (window.innerHeight-w*7/6).toString().concat('px');
+  document.getElementById('div-info-south').style.fontSize = (w*FONT_RATIO).toString().concat('px');
 }
 
 function arrange_LongPortraitFitToHeight() {
@@ -52,6 +54,7 @@ function arrange_LongPortraitFitToHeight() {
   document.getElementById('div-board-area').style.height = w.toString().concat('px');
   document.getElementById('div-info-south').style.width = w.toString().concat('px');
   document.getElementById('div-info-south').style.height = (window.innerHeight-w*7/6).toString().concat('px');
+  document.getElementById('div-info-south').style.fontSize = (w*FONT_RATIO).toString().concat('px');
 }
 
 function arrange_ShortPortraitFitToWidth() {
@@ -67,6 +70,7 @@ function arrange_ShortPortraitFitToWidth() {
   document.getElementById('div-board-area').style.height = (w*6/7).toString().concat('px');
   document.getElementById('div-info-south').style.width = w.toString().concat('px');
   document.getElementById('div-info-south').style.height = (window.innerHeight-w*6/7).toString().concat('px');
+  document.getElementById('div-info-south').style.fontSize = (w*FONT_RATIO).toString().concat('px');
 }
 
 function arrange_ShortPortraitFitToHeight() {
@@ -82,6 +86,7 @@ function arrange_ShortPortraitFitToHeight() {
   document.getElementById('div-board-area').style.height = (w*6/7).toString().concat('px');
   document.getElementById('div-info-south').style.width = w.toString().concat('px');
   document.getElementById('div-info-south').style.height = (window.innerHeight-w*6/7).toString().concat('px');
+  document.getElementById('div-info-south').style.fontSize = (w*FONT_RATIO).toString().concat('px');
 }
 
 function arrange_ShortLandscapeFitToWidth() {
@@ -97,6 +102,7 @@ function arrange_ShortLandscapeFitToWidth() {
   document.getElementById('div-board-area').style.height = (h*6/7).toString().concat('px');
   document.getElementById('div-info-east').style.width = (window.innerWidth-h*6/7).toString().concat('px');
   document.getElementById('div-info-east').style.height = (h*6/7).toString().concat('px');
+  document.getElementById('div-info-east').style.fontSize = (h*6/7*FONT_RATIO).toString().concat('px');
 }
 
 function arrange_ShortLandscapeFitToHeight() {
@@ -112,6 +118,7 @@ function arrange_ShortLandscapeFitToHeight() {
   document.getElementById('div-board-area').style.height = (h*6/7).toString().concat('px');
   document.getElementById('div-info-east').style.width = (window.innerWidth-h*6/7).toString().concat('px');
   document.getElementById('div-info-east').style.height = (h*6/7).toString().concat('px');
+  document.getElementById('div-info-east').style.fontSize = (h*6/7*FONT_RATIO).toString().concat('px');
 }
 
 function arrange_LongLandscapeFitToWidth() {
@@ -127,6 +134,7 @@ function arrange_LongLandscapeFitToWidth() {
   document.getElementById('div-board-area').style.height = h.toString().concat('px');
   document.getElementById('div-info-east').style.width = (window.innerWidth-h*7/6).toString().concat('px');
   document.getElementById('div-info-east').style.height = h.toString().concat('px');
+  document.getElementById('div-info-east').style.fontSize = (h*FONT_RATIO).toString().concat('px');
 }
 
 function arrange_LongLandscapeFitToHeight() {
@@ -142,6 +150,7 @@ function arrange_LongLandscapeFitToHeight() {
   document.getElementById('div-board-area').style.height = h.toString().concat('px');
   document.getElementById('div-info-east').style.width = (window.innerWidth-h*7/6).toString().concat('px');
   document.getElementById('div-info-east').style.height = h.toString().concat('px');
+  document.getElementById('div-info-east').style.fontSize = (h*FONT_RATIO).toString().concat('px');
 }
 
 function expand_to_full_screen() {
