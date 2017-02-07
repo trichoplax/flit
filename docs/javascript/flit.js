@@ -472,7 +472,7 @@ class Game {
       pieces = this.player2_pieces;
     }
     if (this.no_empty_neighbours(pieces)) {
-      this.game_over();
+      this.announce_game_over();
     }
   }
   
@@ -494,7 +494,7 @@ class Game {
     return true;
   }
   
-  game_over() {
+  announce_game_over() {
     if (this.player_to_move === 0) {
       alert('You lost.');
     } else {
