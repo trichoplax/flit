@@ -331,13 +331,22 @@ class Game {
   add_isolated_squares(x, y) {
     var location;
     for (let target of [[x, y]].concat(this.neighbours(x, y))) {
-      if (this.board[target[0]][target[1]] === this.EMPTY_SQUARE) {
+      if (this.is_isolated(target[0], target[1])) {
         location = this.theIndexOf(this.isolated_squares, target);
         if (location === -1) {
           this.isolated_squares.push(target);
         }
       }
     }
+  }
+  
+  is_isolated(x, y) {
+    for (let square of [[x,y]].concat(this.neighbours(x, y))) {
+      if (this.board[square[0]][square[1]] !== this.EMPTY_SQUARE) {
+        return false;
+      }      
+    }
+    return true;
   }
   
   theIndexOf(array_of_coords, target_coords) {
