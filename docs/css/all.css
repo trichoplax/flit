@@ -26,6 +26,7 @@ a:hover {
 #div-outer-vertical-flexbox {
   display: flex;
   flex-direction: column;
+  background-color: black;
 }
 #div-inner-horizontal-flexbox {
   display: flex;
