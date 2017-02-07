@@ -369,7 +369,7 @@ class Game {
     if (this.player_to_move === 0) {
       piece_type = this.board(x, y);
       if (this.is_piece_selected) {
-        switch piece_type {
+        switch (piece_type) {
           case SELECTED_PLAYER1_PIECE:
             this.deselect_player1_piece(x, y);
           case HIGHLIGHTED_EMPTY_SQUARE:
@@ -378,7 +378,7 @@ class Game {
             this.warning();
         }
       } else {
-        switch piece_type {
+        switch (piece_type) {
           case PLAYER1_PIECE:
             this.select_player1_piece(x, y);
           default:
