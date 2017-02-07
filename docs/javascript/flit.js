@@ -550,7 +550,7 @@ class Game {
   
   convert_neutral_pieces(x, y) {
     for (let square of this.neighbours(x, y)) {
-      if (this.board(square[0], square[1]) = this.NEUTRAL_PIECE) {
+      if (this.board(square[0], square[1]) === this.NEUTRAL_PIECE) {
         if (this.player_to_move === 0) {
           this.place_player1_piece(square[0], square[1]);
         } else {
