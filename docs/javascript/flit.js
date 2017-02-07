@@ -233,6 +233,11 @@ class Game {
     this.player1_adjacent_squares = [];
     this.player2_adjacent_squares = [];
     this.highlighted_destination_squares = [];
+    this.is_piece_selected = false;
+    this.selected_piece_index = 0;
+    this.selected_piece_x = 0;
+    this.selected_piece_y = 0;
+    this.player_to_move = 0;
 
     for (y = 0; y <= 11; y++) {
       for (x = 0; x <= 11; x++) {
@@ -252,7 +257,6 @@ class Game {
       y = square[1];
       this.place_player2_piece(x, y);
     }
-    this.player_to_move = 0;
   }
   
   place_player1_piece(x, y) {
