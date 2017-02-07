@@ -411,6 +411,7 @@ class Game {
   }
   
   highlight_player1_destination_squares(x, y) {
+    this.highlighted_destination_squares = [];
     for (let piece of this.player1_pieces) {
       if (!(piece[0] === x && piece[1] === y)) {
         for (let square of this.neighbours(piece[0], piece[1])) {
@@ -456,6 +457,7 @@ class Game {
   }
   
   select_player2_destination_squares(x, y) {
+    this.highlighted_destination_squares = [];
     for (let piece of this.player2_pieces) {
       if (!(piece[0] === x && piece[1] === y)) {
         for (let square of this.neighbours(piece[0], piece[1])) {
