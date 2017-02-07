@@ -451,6 +451,7 @@ class Game {
     this.deselect_player1_piece(this.selected_piece_x, this.selected_piece_y);
     this.make_square_empty(this.selected_piece_x, this.selected_piece_y);
     this.place_player1_piece(x, y);
+    this.convert_neutral_pieces(x, y);
     var location = this.theIndexOf(this.player1_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player1_pieces.splice(location, 1);
     this.switch_player_to_move();
@@ -541,9 +542,24 @@ class Game {
   move_player2_piece(x, y) {
     this.make_square_empty(this.selected_piece_x, this.selected_piece_y);
     this.place_player2_piece(x, y);
+    this.convert_neutral_pieces(x, y);
     var location = this.theIndexOf(this.player2_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player2_pieces.splice(location, 1);
     this.switch_player_to_move();
+  }
+  
+  convert_neutral_pieces(x, y) {
+    for (let square of this.neighbours(x, y)) {
+      if (this.board(square[0], square[1]) = this.NEUTRAL_PIECE) {
+        if (this.player_to_move === 0) {
+          this.place_player1_piece(square[0], square[1]);
+        } else {
+          this.place_player2_piece(square[0], square[1]);
+        }
+        var location = this.theIndexOf(this.neutral_pieces, [square[0], square[1]]);
+        this.neutral_pieces.splice(location, 1);
+      }
+    }
   }
   
 }
