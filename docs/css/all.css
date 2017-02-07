@@ -22,7 +22,7 @@ a:hover {
 }
 .link {
   text-align: right; /* Move link away from board to avoid accidentally touching it and discarding a game in progress */
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Courier, monospace;
 }
 #div-outer-vertical-flexbox {
   display: flex;
