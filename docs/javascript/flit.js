@@ -406,7 +406,7 @@ class Game {
   
   highlight_player1_destination_squares(x, y) {
     for (let piece of this.player1_pieces) {
-      if !(piece[0] === x && piece[1] === y) {
+      if (!(piece[0] === x && piece[1] === y)) {
         for (let square of this.neighbours(piece[0], piece[1])) {
           if (this.board[square[0]][square[1]] === this.EMPTY_SQUARE) {
             this.highlight_empty_square(square[0], square[1]);
