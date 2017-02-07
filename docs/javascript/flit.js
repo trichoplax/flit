@@ -478,6 +478,7 @@ class Game {
   
   no_empty_neighbours(pieces) {
     for (let piece of pieces) {
+      console.log('Checking piece at ' + piece);
       if (!this.is_boxed_in(pieces[0], pieces[1])) {
         return false;
       }
@@ -487,6 +488,7 @@ class Game {
   
   is_boxed_in(x, y) {
     for (let square of this.neighbours(x, y)) {
+      console.log('Sub-checking neighbour at ' + square);
       if (this.board[square[0]][square[1]] === this.EMPTY_SQUARE) {
         return false;
       }      
