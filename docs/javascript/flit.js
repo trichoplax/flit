@@ -367,7 +367,7 @@ class Game {
   
   accept_click(x, y) {
     if (this.player_to_move === 0) {
-      piece_type = this.board[x][y];
+      var piece_type = this.board[x][y];
       if (this.is_piece_selected) {
         switch (piece_type) {
           case SELECTED_PLAYER1_PIECE:
