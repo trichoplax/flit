@@ -331,9 +331,11 @@ class Game {
   add_isolated_squares(x, y) {
     var location;
     for (let target of [[x, y]].concat(this.neighbours(x, y))) {
-      location = this.theIndexOf(this.isolated_squares, target);
-      if (location === -1) {
-        this.isolated_squares.push(target);
+      if (this.board[target[0]][target[1]] === this.EMPTY_SQUARE) {
+        location = this.theIndexOf(this.isolated_squares, target);
+        if (location === -1) {
+          this.isolated_squares.push(target);
+        }
       }
     }
   }
@@ -434,14 +436,45 @@ class Game {
     this.highlighted_destination_squares = [];
   }
   
-  move_player1_piece(x, y) { 
+  move_player1_piece(x, y) {
     this.deselect_player1_piece(this.selected_piece_x, this.selected_piece_y);
     this.make_square_empty(this.selected_piece_x, this.selected_piece_y);
     this.place_player1_piece(x, y);
     var location = this.theIndexOf(this.player1_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player1_pieces.splice(location, 1);
+    this.player_to_move = 1;
+    this.make_computer_move();
   }
-
+  
+  make_computer_move() {
+    var piece = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
+    this.selected_piece_x = piece[0];
+    this.selected_piece_y = piece[1];
+    this.select_player2_destination_squares(piece[0], piece[1]);
+    var destination = this.highlighted_destination_squares[Math.floor(Math.random() * this.highlighted_destination_squares.length)];
+    this.move_player2_piece(destination[0], destination[1]);
+  }
+  
+  select_player2_destination_squares(x, y) {
+    for (let piece of this.player2_pieces) {
+      if (!(piece[0] === x && piece[1] === y)) {
+        for (let square of this.neighbours(piece[0], piece[1])) {
+          if (this.board[square[0]][square[1]] === this.EMPTY_SQUARE) {
+            this.highlighted_destination_squares.push([square[0], square[1]]);
+          }
+        }
+      }
+    }
+  }
+        
+  move_player2_piece(x, y) {
+    this.make_square_empty(this.selected_piece_x, this.selected_piece_y);
+    this.place_player2_piece(x, y);
+    var location = this.theIndexOf(this.player2_pieces, [this.selected_piece_x, this.selected_piece_y]);
+    this.player2_pieces.splice(location, 1);
+    this.player_to_move = 0;
+  }
+  
 }
 
 function prepare() {
