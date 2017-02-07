@@ -302,7 +302,7 @@ class Game {
     console.log('First element: ' + this.isolated_squares[0]);
     for (let target of [[x, y]].concat(this.neighbours(x, y))) {
       console.log('Checking ' + target);
-      location = this.isolated_squares.indexOf(target);
+      location = this.theIndexOf(this.isolated_squares, target);
       console.log('location: ' + location);
       if (location > -1) {
         this.isolated_squares.splice(location, 1);
@@ -314,11 +314,24 @@ class Game {
   add_isolated_squares(x, y) {
     var location;
     for (let target of [[x, y]].concat(this.neighbours(x, y))) {
-      location = this.isolated_squares.indexOf(target);
+      location = this.theIndexOf(this.isolated_squares, target);
       if (location === -1) {
         this.isolated_squares.push(target);
       }
     }
+  }
+  
+  theIndexOf(array_of_arrays, target_array) {
+    var array_of_strings = [];
+    for (let coords of array_of_arrays) {
+      array_of_strings.push(this.stringed(coords));
+    }
+    var target_string = this.stringed(target_array);
+    return array_of_strings.indexOf(target_string);
+  }
+  
+  stringed(couple_to_convert) {
+    return couple_to_convert[0] + ',' + couple_to_convert[1];
   }
 
   neighbours(x, y) {   // Javascript % currently takes the sign of the dividend rather than the divisor, hence the +12s
