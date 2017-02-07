@@ -422,7 +422,8 @@ class Game {
   
   deselect_player1_piece() {
     this.is_piece_selected = false;
-    this.board[this.selected_piece_x][this.selected_piece_y] = this.PLAYER1_PIECE;
+    this.unhighlight_player1_piece(this.selected_piece_x, this.selected_piece_y);
+    
     this.remove_highlighting_of_squares()
   }
   
