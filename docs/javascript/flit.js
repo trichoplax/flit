@@ -370,8 +370,12 @@ class Game {
       var piece_type = this.board[x][y];
       if (this.is_piece_selected) {
         switch (piece_type) {
+          case this.PLAYER1_PIECE:
+            this.deselect_player1_piece();
+            this.select_player1_piece(x, y);
+            break;
           case this.SELECTED_PLAYER1_PIECE:
-            this.deselect_player1_piece(x, y);
+            this.deselect_player1_piece();
             break;
           case this.HIGHLIGHTED_EMPTY_SQUARE:
             this.move_player1_piece(x, y);
@@ -416,9 +420,9 @@ class Game {
     }
   }
   
-  deselect_player1_piece(x, y) {
+  deselect_player1_piece() {
     this.is_piece_selected = false;
-    this.board[x][y] = this.PLAYER1_PIECE;
+    this.board[this.selected_piece_x][this.selected_piece_y] = this.PLAYER1_PIECE;
     this.remove_highlighting_of_squares()
   }
   
