@@ -372,8 +372,10 @@ class Game {
         switch (piece_type) {
           case SELECTED_PLAYER1_PIECE:
             this.deselect_player1_piece(x, y);
+            break;
           case HIGHLIGHTED_EMPTY_SQUARE:
             this.move_player1_piece(x, y);
+            break;
           default:
             this.warning();
         }
@@ -381,6 +383,7 @@ class Game {
         switch (piece_type) {
           case PLAYER1_PIECE:
             this.select_player1_piece(x, y);
+            break;
           default:
             this.warning();
         }
