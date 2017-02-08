@@ -473,7 +473,7 @@ class Game {
       your_pieces = this.player2_pieces;
     } else {
       my_pieces = this.player2_pieces;
-      your_pieces = this.player1.pieces;
+      your_pieces = this.player1_pieces;
     }
     if (this.no_empty_neighbours(my_pieces)) {
       this.announce_game_over_due_to_constriction();
