@@ -632,7 +632,7 @@ class Game {
     }
     var destination_distances = this.distances(target, potential_destination_squares);
     var min_distance = Math.min.apply(null, destination_distances);
-    for (i=0; i<potential_destination_squares.length; i++) {
+    for (let i=0; i<potential_destination_squares.length; i++) {
       if (destination_distances[i] === min_distance) {
         candidates.push(potential_destination_squares[i]);
       }
