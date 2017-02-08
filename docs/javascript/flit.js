@@ -418,6 +418,7 @@ class Game {
   }
   
   warning() {
+    console.log('Setting warning.');
     var tiles1 = document.getElementsByClassName('tile1');
     var tiles2 = document.getElementsByClassName('tile2');
     var tiles = tiles1.concat(tiles2);
@@ -428,6 +429,7 @@ class Game {
   }
   
   remove_warning() {
+    console.log('Removing warning.');
     var tiles1 = document.getElementsByClassName('tile1');
     var tiles2 = document.getElementsByClassName('tile2');
     var tiles = tiles1.concat(tiles2);
