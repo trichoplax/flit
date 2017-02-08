@@ -418,8 +418,23 @@ class Game {
   }
   
   warning() {
-    
+    var tiles1 = document.getElementsByClassName('tile1');
+    var tiles2 = document.getElementsByClassName('tile2');
+    var tiles = tiles1.concat(tiles2);
+    for (let tile of tiles) {
+      tile.style.background = 'red';
+    }
+    setTimeout(remove_warning, 1000);
   }
+  
+  remove_warning() {
+    var tiles1 = document.getElementsByClassName('tile1');
+    var tiles2 = document.getElementsByClassName('tile2');
+    var tiles = tiles1.concat(tiles2);
+    for (let tile of tiles) {
+      tile.style.background = 'initial';
+    }
+  }      
   
   select_player1_piece(x, y) {
     this.is_piece_selected = true;
