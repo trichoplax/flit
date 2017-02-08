@@ -603,12 +603,12 @@ class Game {
       player2_closest_distance = Math.min.apply(null, this.distances(neutral_piece, this.player2_pieces));
       difference = player2_closest_distance - player1_closest_distance;
       if (difference < 0) {
-        difference = 25;  // Larger than max possible distance of 25, to cover case where board wrapping is not used.
+        difference = 13;  // Larger than max possible distance of 12.
       }
       differences.push(difference);
     }
     min_difference = Math.min.apply(null, differences);
-    if (min_difference === 25) {
+    if (min_difference === 13) {
       this.make_move_that_maximises_controlled_isolated_squares();
     } else {
       for (let i=0; i<differences.length; i++) {
@@ -667,7 +667,9 @@ class Game {
   }
   
   distance(a, b) {
-    return Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]);
+    var horizontal = Math.abs(a[0] - b[0]));
+    var vertical = Math.abs(a[1] - b[1]));
+    return Math.min(horizontal, 12 - horizontal) + Math.min(vertical, 12 - vertical);
   }
   
   select_player2_destination_squares(x, y) {
