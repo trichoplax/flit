@@ -584,6 +584,7 @@ class Game {
       console.log('Learn the rules by playing.');
       document.getElementById('instructions-east').innerHTML = 'Learn the rules by playing.';
       document.getElementById('instructions-south').innerHTML = 'Learn the rules by playing.';            
+      this.switch_player_to_move();
     }
   }
   
@@ -697,7 +698,6 @@ class Game {
     this.convert_neutral_pieces(x, y);
     var location = this.theIndexOf(this.player2_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player2_pieces.splice(location, 1);
-    this.switch_player_to_move();
   }
   
   convert_neutral_pieces(x, y) {
