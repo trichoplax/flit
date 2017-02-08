@@ -602,7 +602,7 @@ class Game {
     for (let neutral_piece of this.neutral_pieces) {
       player1_closest_distance = Math.min.apply(null, this.distances(neutral_piece, this.player1_pieces));
       player2_closest_distance = Math.min.apply(null, this.distances(neutral_piece, this.player2_pieces));
-      difference = player2_closest_distance - player1_closest_distance;
+      difference = player1_closest_distance - player2_closest_distance;
       if (difference < 0) {
         difference = 13;  // Larger than max possible distance of 12.
       }
