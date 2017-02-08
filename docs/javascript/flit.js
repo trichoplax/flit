@@ -476,6 +476,7 @@ class Game {
     this.convert_neutral_pieces(x, y);
     var location = this.theIndexOf(this.player1_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player1_pieces.splice(location, 1);
+    console.log('Thinking...');
     document.getElementById('instructions-east').innerHTML = 'Thinking...';
     document.getElementById('instructions-south').innerHTML = 'Thinking...';
     this.switch_player_to_move();
@@ -524,10 +525,12 @@ class Game {
   
   announce_game_over_due_to_constriction() {
     if (this.player_to_move === 0) {
+      console.log('Nowhere to move - you lost.');
       document.getElementById('instructions-east').innerHTML = 'Nowhere to move - you lost.';
       document.getElementById('instructions-south').innerHTML = 'Nowhere to move - you lost.';
       this.grey_out_player1_pieces();
     } else {
+      console.log('Nowhere to move - you won!!');
       document.getElementById('instructions-east').innerHTML = 'Nowhere to move - you won!!';
       document.getElementById('instructions-south').innerHTML = 'Nowhere to move - you won!!';
       this.grey_out_player2_pieces();
@@ -537,10 +540,12 @@ class Game {
   
   announce_game_over_due_to_numbers() {
     if (this.player_to_move === 0) {
+      console.log('Enemy gained 48 - you lost.');
       document.getElementById('instructions-east').innerHTML = 'Enemy gained 48 - you lost.';
       document.getElementById('instructions-south').innerHTML = 'Enemy gained 48 - you lost.';
       this.grey_out_player1_pieces();
     } else {
+      console.log('You gained 48 - you won!!');
       document.getElementById('instructions-east').innerHTML = 'You gained 48 - you won!!';
       document.getElementById('instructions-south').innerHTML = 'You gained 48 - you won!!';
       this.grey_out_player2_pieces();
@@ -576,6 +581,7 @@ class Game {
       } else {
         this.move_towards_most_contested_neutral_piece();
       }
+      console.log('Learn the rules by playing.');
       document.getElementById('instructions-east').innerHTML = 'Learn the rules by playing.';
       document.getElementById('instructions-south').innerHTML = 'Learn the rules by playing.';            
     }
