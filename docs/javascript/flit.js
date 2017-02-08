@@ -467,16 +467,18 @@ class Game {
   }
   
   check_for_game_over() {
-    var pieces
+    var my_pieces, your_pieces;
     if (this.player_to_move === 0) {
-      pieces = this.player1_pieces;
+      my_pieces = this.player1_pieces;
+      your_pieces = this.player2_pieces;
     } else {
-      pieces = this.player2_pieces;
+      my_pieces = this.player2_pieces;
+      your_pieces = this.player1.pieces;
     }
-    if (this.no_empty_neighbours(pieces)) {
+    if (this.no_empty_neighbours(my_pieces)) {
       this.announce_game_over_due_to_constriction();
     }
-    if (pieces.length === 48) {
+    if (your_pieces.length >= 48) {
       this.announce_game_over_due_to_numbers();
     }
   }
