@@ -245,6 +245,7 @@ class Game {
     this.selected_piece_y = 0;
     this.player_to_move = 0;
     this.game_over = false;
+    document.getElementById('instructions').innerHTML = 'Learn the rules by playing.';
 
     for (y = 0; y <= 11; y++) {
       for (x = 0; x <= 11; x++) {
@@ -472,7 +473,10 @@ class Game {
       pieces = this.player2_pieces;
     }
     if (this.no_empty_neighbours(pieces)) {
-      this.announce_game_over();
+      this.announce_game_over_due_to_constriction();
+    }
+    if (pieces.length === 48) {
+      this.announce_game_over_due_to_numbers();
     }
   }
   
@@ -494,11 +498,24 @@ class Game {
     return true;
   }
   
-  announce_game_over() {
+  announce_game_over_due_to_constriction() {
     if (this.player_to_move === 0) {
+      document.getElementById('instructions').innerHTML = 'Nowhere to move - you lost.';
       alert('You lost.');
     } else {
-      alert('You won!');
+      document.getElementById('instructions').innerHTML = 'Nowhere to move - you won!!';
+      alert('You won!!');
+    }
+    this.game_over = true;
+  }
+  
+  announce_game_over_due_to_numbers() {
+    if (this.player_to_move === 0) {
+      document.getElementById('instructions').innerHTML = 'Enemy gained 48 - you lost.';
+      alert('You lost.');
+    } else {
+      document.getElementById('instructions').innerHTML = 'You gained 48 - you won!!';
+      alert('You won!!');
     }
     this.game_over = true;
   }
