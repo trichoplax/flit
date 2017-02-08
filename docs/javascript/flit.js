@@ -282,6 +282,14 @@ class Game {
     this.player2_pieces.push([x, y]);
   }
   
+  place_grey_player1_piece(x, y) {
+    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#greyed-player1-piece-image\'></use>';
+  }
+  
+  place_grey_player2_piece(x, y) {
+    document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#greyed-player2-piece-image\'></use>';
+  }
+  
   place_neutral_piece(x, y) {
     document.getElementById('div-tile-x' + x + '-y' + y).innerHTML = '<use xlink:href=\'images/logo-and-buttons.svg#neutral-piece-image\'></use>';
     this.remove_isolated_squares(x, y);
@@ -505,12 +513,14 @@ class Game {
     if (this.player_to_move === 0) {
       document.getElementById('instructions-east').innerHTML = 'Nowhere to move - you lost.';
       document.getElementById('instructions-south').innerHTML = 'Nowhere to move - you lost.';
+      this.grey_out_player1_pieces();
       alert('You lost.');
     } else {
       document.getElementById('instructions-east').innerHTML = 'Nowhere to move - you won!!';
       document.getElementById('instructions-south').innerHTML = 'Nowhere to move - you won!!';
+      this.grey_out_player2_pieces();
       alert('You won!!');
-    }
+    }    
     this.game_over = true;
   }
   
@@ -518,13 +528,27 @@ class Game {
     if (this.player_to_move === 0) {
       document.getElementById('instructions-east').innerHTML = 'Enemy gained 48 - you lost.';
       document.getElementById('instructions-south').innerHTML = 'Enemy gained 48 - you lost.';
+      this.grey_out_player1_pieces();
       alert('You lost.');
     } else {
       document.getElementById('instructions-east').innerHTML = 'You gained 48 - you won!!';
       document.getElementById('instructions-south').innerHTML = 'You gained 48 - you won!!';
+      this.grey_out_player2_pieces();
       alert('You won!!');
     }
     this.game_over = true;
+  }
+  
+  grey_out_player1_pieces() {
+    for (let piece of this.player1_pieces) {
+      this.place_grey_player1_piece(piece[0], piece[1]);
+    }
+  }
+  
+  grey_out_player2_pieces() {
+    for (let piece of this.player2_pieces) {
+      this.place_grey_player2_piece(piece[0], piece[1]);
+    }
   }
   
   maybe_add_neutral_piece() {
