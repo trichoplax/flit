@@ -662,7 +662,7 @@ class Game {
   distances(target, pieces) {
     var array_of_distances = [];
     for (let piece of pieces) {
-      array_of_distances.push(distance(target, piece));
+      array_of_distances.push(this.distance(target, piece));
     }
     return array_of_distances;
   }
