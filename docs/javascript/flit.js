@@ -572,20 +572,103 @@ class Game {
     
   make_computer_move() {
     if (this.game_over === false) {
+      if (this.neutral_pieces.length === 0) {
+        this.make_move_that_maximises_controlled_isolated_squares();
+      } else {
+        this.move_towards_most_contested_neutral_piece();
+      }
+      document.getElementById('instructions-east').innerHTML = 'Learn the rules by playing.';
+      document.getElementById('instructions-south').innerHTML = 'Learn the rules by playing.';            
+    }
+  }
+  
+  make_move_that_maximises_controlled_isolated_squares() {
+    // Random move until implemented later. 
+    while (true) {
+      var piece = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
+      this.selected_piece_x = piece[0];
+      this.selected_piece_y = piece[1];
+      this.select_player2_destination_squares(piece[0], piece[1]);
+      if (this.highlighted_destination_squares.length > 0) {
+        break;
+      }
+    }
+    var destination = this.highlighted_destination_squares[Math.floor(Math.random() * this.highlighted_destination_squares.length)];
+    this.move_player2_piece(destination[0], destination[1]);
+  }
+  
+  move_towards_most_contested_neutral_piece() {
+    var player1_distance, player2_distance, difference, differences = [], min_difference, candidates = [];
+    for (let neutral_piece of this.neutral_pieces) {
+      player1_distance = Math.min.apply(null, this.distances(neutral_piece, this.player1_pieces));
+      player2_distance = Math.min.apply(null, this.distances(neutral_piece, this.player2_pieces));
+      difference = player2_distance - player1_distance;
+      if (difference < 0) {
+        difference = 13;  // Larger than max possible distance of 12
+      }
+      differences.append(difference);
+    }
+    min_difference = Math.min.apply(null, differences);
+    if (min_difference === 13) {
+      this.make_move_that_maximises_controlled_isolated_squares();
+    } else {
+      for (let i=0; i<differences.length; i++) {
+        if (differences[i] === min_difference) {
+          candidates.push(this.neutral_pieces[i]);
+        }
+      }
+      this.move_towards(candidates[Math.floor(Math.random() * candidates.length)]);
+    }
+  }
+  
+  move_towards(target) {  
+    var potential_destination_squares = [], candidates = [], piece_to_move;
+    for (let piece of this.player2_pieces) {
+      for (let square of this.neighbours(piece[0], piece[1])) {
+        if (this.board[square[0]][square[1]] === this.EMPTY_SQUARE) {
+          potential_destination_squares.push([square[0], square[1]]);
+        }
+      }
+    }
+    var destination_distances = this.distances(target, potential_destination_squares);
+    var min_distance = Math.min.apply(null, destination_distances);
+    for (i=0; i<potential_destination_squares.length; i++) {
+      if (destination_distances[i] === min_distance) {
+        candidates.push(potential_destination_squares[i]);
+      }
+    }
+    var destination = candidates[Math.floor(Math.random() * candidates.length)];
+    var receiving_pieces = [];
+    for (let square of this.neighbours(destination[0], destination[1])) {
+      if (this.board[square[0]][square[1]] === this.PLAYER2_PIECE) {
+        receiving_pieces.push(square);
+      }      
+    }
+    if (receiving_pieces.length > 1) {
+      piece_to_move = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
+    } else {
       while (true) {
-        var piece = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
-        this.selected_piece_x = piece[0];
-        this.selected_piece_y = piece[1];
-        this.select_player2_destination_squares(piece[0], piece[1]);
-        if (this.highlighted_destination_squares.length > 0) {
+        piece_to_move = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
+        if (!(piece_to_move[0] === receiving_pieces[0][0] && piece_to_move[1] === receiving_pieces[0][1])) {
           break;
         }
       }
-      var destination = this.highlighted_destination_squares[Math.floor(Math.random() * this.highlighted_destination_squares.length)];
-      this.move_player2_piece(destination[0], destination[1]);
-      document.getElementById('instructions-east').innerHTML = 'Learn the rules by playing.';
-      document.getElementById('instructions-south').innerHTML = 'Learn the rules by playing.';      
     }
+    this.selected_piece_x = piece_to_move[0];
+    this.selected_piece_y = piece_to_move[1];
+    this.move_player2_piece(destination[0], destination[1]);
+  }
+  
+  distances(target, pieces) {
+    var array_of_distances = [];
+    for (let piece of pieces) {
+      array_of_distances.push(distance(target, piece));
+    }
+    return array_of_distances;
+  }
+  
+  distance(a, b) {
+    return Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]);
   }
   
   select_player2_destination_squares(x, y) {
