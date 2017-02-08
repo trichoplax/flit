@@ -598,18 +598,18 @@ class Game {
   }
   
   move_towards_most_contested_neutral_piece() {
-    var player1_distance, player2_distance, difference, differences = [], min_difference, candidates = [];
+    var player1_closest_distance, player2_closest_distance, difference, differences = [], min_difference, candidates = [];
     for (let neutral_piece of this.neutral_pieces) {
-      player1_distance = Math.min.apply(null, this.distances(neutral_piece, this.player1_pieces));
-      player2_distance = Math.min.apply(null, this.distances(neutral_piece, this.player2_pieces));
-      difference = player2_distance - player1_distance;
+      player1_closest_distance = Math.min.apply(null, this.distances(neutral_piece, this.player1_pieces));
+      player2_closest_distance = Math.min.apply(null, this.distances(neutral_piece, this.player2_pieces));
+      difference = player2_closest_distance - player1_closest_distance;
       if (difference < 0) {
-        difference = 13;  // Larger than max possible distance of 12
+        difference = 25;  // Larger than max possible distance of 25, to cover case where board wrapping is not used.
       }
-      differences.append(difference);
+      differences.push(difference);
     }
     min_difference = Math.min.apply(null, differences);
-    if (min_difference === 13) {
+    if (min_difference === 25) {
       this.make_move_that_maximises_controlled_isolated_squares();
     } else {
       for (let i=0; i<differences.length; i++) {
