@@ -485,9 +485,9 @@ class Game {
     this.convert_neutral_pieces(x, y);
     var location = this.theIndexOf(this.player1_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player1_pieces.splice(location, 1);
-    this.switch_player_to_move();
     document.getElementById('instructions-east').innerHTML = 'Thinking...';
     document.getElementById('instructions-south').innerHTML = 'Thinking...';
+    this.switch_player_to_move();
     setTimeout(this.make_computer_move(), 50);
   }
   
