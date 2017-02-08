@@ -427,7 +427,7 @@ class Game {
     for (let tile of tiles2) {
       tile.style.background = 'red';
     }
-    setTimeout(this.remove_warning, 1000);
+    setTimeout(this.remove_warning, 100);
   }
   
   remove_warning() {
