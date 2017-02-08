@@ -435,10 +435,10 @@ class Game {
     var tiles1 = document.getElementsByClassName('tile1');
     var tiles2 = document.getElementsByClassName('tile2');
     for (let tile of tiles1) {
-      tile.style.background = 'initial';
+      tile.style.background = '#301500';
     }
     for (let tile of tiles2) {
-      tile.style.background = 'initial';
+      tile.style.background = '#452200';
     }
   }      
   
