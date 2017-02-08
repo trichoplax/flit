@@ -260,7 +260,6 @@ class Game {
       x = square[0];
       y = square[1];
       this.place_player1_piece(x, y);
-      console.log('Placing at ' + x + ', ' + y)
       square = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
       x = square[0];
       y = square[1];
@@ -324,17 +323,11 @@ class Game {
   }
     
   remove_isolated_squares(x, y) {
-    console.log('remove_isolated_squares called with ' + x + ', ' + y);
     var location;
-    console.log('isolated_squares: ' + this.isolated_squares);
-    console.log('First element: ' + this.isolated_squares[0]);
     for (let target of [[x, y]].concat(this.neighbours(x, y))) {
-      console.log('Checking ' + target);
       location = this.theIndexOf(this.isolated_squares, target);
-      console.log('location: ' + location);
       if (location > -1) {
         this.isolated_squares.splice(location, 1);
-        console.log('Removing ' + target);
       }
     }
   }
@@ -418,7 +411,6 @@ class Game {
   }
   
   warning() {
-    console.log('Setting warning.');
     var tiles1 = document.getElementsByClassName('tile1');
     var tiles2 = document.getElementsByClassName('tile2');
     for (let tile of tiles1) {
@@ -431,7 +423,6 @@ class Game {
   }
   
   remove_warning() {
-    console.log('Removing warning.');
     var tiles1 = document.getElementsByClassName('tile1');
     var tiles2 = document.getElementsByClassName('tile2');
     for (let tile of tiles1) {
@@ -636,11 +627,8 @@ class Game {
 }
 
 function prepare() {
-  console.log('About to prepare');
   game = new Game();
-  console.log('New game made');
   reorganise();
-  console.log('Reorganised');
   document.onfullscreenchange = switch_buttons;
   document.onmozfullscreenchange = switch_buttons;
   document.onwebkitfullscreenchange = switch_buttons;
@@ -648,6 +636,4 @@ function prepare() {
   window.onresize = reorganise;
 }
 
-console.log('Javascript reached end');
 window.onload = prepare;
-console.log('onload event assigned');
