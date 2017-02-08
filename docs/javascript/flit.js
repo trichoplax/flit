@@ -421,19 +421,23 @@ class Game {
     console.log('Setting warning.');
     var tiles1 = document.getElementsByClassName('tile1');
     var tiles2 = document.getElementsByClassName('tile2');
-    var tiles = tiles1.concat(tiles2);
-    for (let tile of tiles) {
+    for (let tile of tiles1) {
       tile.style.background = 'red';
     }
-    setTimeout(remove_warning, 1000);
+    for (let tile of tiles2) {
+      tile.style.background = 'red';
+    }
+    setTimeout(this.remove_warning, 1000);
   }
   
   remove_warning() {
     console.log('Removing warning.');
     var tiles1 = document.getElementsByClassName('tile1');
     var tiles2 = document.getElementsByClassName('tile2');
-    var tiles = tiles1.concat(tiles2);
-    for (let tile of tiles) {
+    for (let tile of tiles1) {
+      tile.style.background = 'initial';
+    }
+    for (let tile of tiles2) {
       tile.style.background = 'initial';
     }
   }      
