@@ -254,6 +254,7 @@ class Game {
         this.display_empty_square(x, y);
       }
     }
+    console.log('Length: ' + this.isolated_squares.length + ' Initial isolated squares: ' + this.isolated_squares);
      
     for (t = 0; t <= 1; t++) {
       square = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
@@ -265,6 +266,7 @@ class Game {
       y = square[1];
       this.place_player2_piece(x, y);
     }
+    console.log('Length: ' + this.isolated_squares.length + ' After placing 4 pieces isolated squares: ' + this.isolated_squares);
   }
   
   place_player1_piece(x, y) {
@@ -483,6 +485,7 @@ class Game {
   }
   
   switch_player_to_move() {
+    console.log('Length: ' + this.isolated_squares.length + ' After player ' + this.player_to_move + 'move isolated squares: ' + this.isolated_squares);
     this.player_to_move = 1 - this.player_to_move;
     this.maybe_add_neutral_piece();
     this.check_for_game_over();
