@@ -667,8 +667,8 @@ class Game {
   }
   
   distance(a, b) {
-    var horizontal = Math.abs(a[0] - b[0]));
-    var vertical = Math.abs(a[1] - b[1]));
+    var horizontal = Math.abs(a[0] - b[0]);
+    var vertical = Math.abs(a[1] - b[1]);
     return Math.min(horizontal, 12 - horizontal) + Math.min(vertical, 12 - vertical);
   }
   
