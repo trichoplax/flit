@@ -8,13 +8,13 @@ button {
   background-color: black;
 }
 a:link { 
-  color: #0f0;
+  color: #080;
 }
 a:visited {
-  color: green;
+  color: #060;
 }
 a:hover {
-  color: green;
+  color: #0b0;
 }
 .instructions {
   color: white;
