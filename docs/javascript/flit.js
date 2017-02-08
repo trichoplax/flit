@@ -500,7 +500,7 @@ class Game {
     }
     if (this.no_empty_neighbours(my_pieces)) {
       this.announce_game_over_due_to_constriction();
-    } else if (your_pieces.length >= 4) {
+    } else if (your_pieces.length >= 48) {
       this.announce_game_over_due_to_numbers();
     }
   }
