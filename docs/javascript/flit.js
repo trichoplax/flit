@@ -535,12 +535,10 @@ class Game {
       document.getElementById('instructions-east').innerHTML = 'Nowhere to move - you lost.';
       document.getElementById('instructions-south').innerHTML = 'Nowhere to move - you lost.';
       this.grey_out_player1_pieces();
-      alert('You lost.');
     } else {
       document.getElementById('instructions-east').innerHTML = 'Nowhere to move - you won!!';
       document.getElementById('instructions-south').innerHTML = 'Nowhere to move - you won!!';
       this.grey_out_player2_pieces();
-      alert('You won!!');
     }    
     this.game_over = true;
   }
@@ -550,12 +548,10 @@ class Game {
       document.getElementById('instructions-east').innerHTML = 'Enemy gained 48 - you lost.';
       document.getElementById('instructions-south').innerHTML = 'Enemy gained 48 - you lost.';
       this.grey_out_player1_pieces();
-      alert('You lost.');
     } else {
       document.getElementById('instructions-east').innerHTML = 'You gained 48 - you won!!';
       document.getElementById('instructions-south').innerHTML = 'You gained 48 - you won!!';
       this.grey_out_player2_pieces();
-      alert('You won!!');
     }
     this.game_over = true;
   }
