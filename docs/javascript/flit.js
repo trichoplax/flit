@@ -486,7 +486,9 @@ class Game {
     var location = this.theIndexOf(this.player1_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player1_pieces.splice(location, 1);
     this.switch_player_to_move();
-    this.make_computer_move();
+    document.getElementById('instructions-east').innerHTML = 'Thinking...';
+    document.getElementById('instructions-south').innerHTML = 'Thinking...';
+    setTimeout(this.make_computer_move(), 50);
   }
   
   switch_player_to_move() {
@@ -590,6 +592,8 @@ class Game {
       }
       var destination = this.highlighted_destination_squares[Math.floor(Math.random() * this.highlighted_destination_squares.length)];
       this.move_player2_piece(destination[0], destination[1]);
+      document.getElementById('instructions-east').innerHTML = 'Learn the rules by playing.';
+      document.getElementById('instructions-south').innerHTML = 'Learn the rules by playing.';      
     }
   }
   
