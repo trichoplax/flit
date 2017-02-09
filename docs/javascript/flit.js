@@ -794,6 +794,7 @@ class Game {
         receiving_pieces.push(square);
       }      
     }
+    console.log('receiving_pieces = ' + receiving_pieces);
     if (receiving_pieces.length > 1) {
       piece_to_move = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
     } else {
