@@ -583,9 +583,6 @@ class Game {
   }
   
   make_move_that_maximises_controlled_isolated_squares() {
-    this.make_random_move(); // Just until this is implemented.
-    
-    
     var possible_moves = this.find_possible_moves();
     var current_stats = this.isolated_squares_stats(this.isolated_squares);
     var scores = [];    
@@ -603,11 +600,107 @@ class Game {
   }
   
   find_possible_moves() {
-    
+    var possible_moves = [];
+    for (let departure_square of this.player2_pieces) {
+      for (let destination_piece of this.player2_pieces) {
+        if !(destination_piece === departure_square) {
+          for (let destination_square of this.neighbours(destination_piece)) {
+            if (this.board[destination_square[0]][destination_square[1]] === this.EMPTY_SQUARE) {
+              possible_moves.push([departure_square, destination_square]);
+            }
+          }
+        }
+      }
+    }
+    return possible_moves;
   }
     
   score(stats, move) {
+    var departure_square = move[0];
+    var destination_square = move[1];
+    var relative_controlled_isolated_squares = 0;
+    var destroyed_isolated_squares = [];
     
+    for (let square of [destination_square].concat(this.neighbours(destination_square[0], destination_square[1]))) {
+      if (this.is_isolated(square[0], square[1])) {
+        destroyed_isolated_squares.push(square);
+        if (this.is_controlled(stats, square)) {
+          relative_controlled_isolated_squares -= 1;
+        }
+      }
+    }
+    
+    var new_player2_distance;
+    for (let i=0; i<this.isolated_squares.length; i++) {
+      if (this.theIndexOf(destroyed_isolated_squares, this.isolated_squares[i]) === -1) {  // If not destroyed
+        if (stats[2][i] === 1) {  // If player 1 was closest
+          if (this.distance(destination_square, this.isolated_squares[i]) < stats[1][i]) {  // If new player 2 distance < current player 1 distance
+            relative_controlled_isolated_squares += 1;
+          }
+        } else {  // If player 2 was closest
+          if (this.distance(departure_square, this.isolated_squares[i]) === stats[0][i]) {  // If moved piece was one of the closest
+            new_player2_distance = this.distances_to_nearest_piece([this.isolated_squares[i]], this.player2_pieces)[0]
+            if (new_player2_distance >= stats[1][i]) {  // If player 2 distance has become further than player 1
+              relative_controlled_isolated_squares -= 1;
+            }
+          }
+        }
+      }
+    }
+    
+    for (let square of [departure_square].concat(this.neighbours(departure_square[0], departure_square[1]))) {
+      if (this.is_isolated_hypothetically(square, departure_square, destination_square) &&
+          this.is_controlled_hypothetically(stats, square, departure_square, destination_square)
+         ) {
+        relative_controlled_isolated_squares += 1;
+      }
+    }
+    return relative_controlled_isolated_squares;
+  }
+  
+  is_isolated_hypothetically(square_in_question, departure_square, destination_square) {
+    // Custom check for whether square is isolated as cannot use existing functions for a move that is only hypothetical
+    for (let square of [square_in_question].concat(this.neighbours(square_in_question[0], square_in_question[1]))) {
+      if (square[0] === destination_square[0] && square[1] === destination_square[1]) {
+        return false;
+      } else if (!((square[0] === departure_square[0] && square[1] === departure_square[1]) ||
+                   this.board[square[0]][square[1]] === this.EMPTY_SQUARE)
+                ) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  is_controlled(stats, square) {
+    for (let i=0; i<this.isolated_squares.length, i++) {
+      if (this.isolated_squares[i][0] === square[0] && this.isolated_squares[i][1] === square[1]) {
+        if (stats[2][i] === 2) {  // stats[2] is the array showing which player is closest for each isolated square
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+  }  
+      
+  is_controlled_hypothetically(square, departure_square, destination_square) {
+    // Custom check for whether square is controlled as cannot use existing functions for a move that is only hypothetical
+    
+    var nearest_player1_distance = Math.min.apply(null, this.distances(square, this.player1_pieces)));
+    
+    var hypothetical_player2_pieces = this.player2_pieces;
+    var location = this.theIndexOf(hypothetical_player2_pieces, departure_square);
+    hypothetical_player2_pieces.splice(location, 1);
+    hypothetical_player2_pieces.push(destination_square);
+
+    var nearest_player2_distance = Math.min.apply(null, this.distances(square, hypothetical_player2_pieces)));
+    
+    if (nearest_player2_distance < nearest_player1_distance) {
+      return true;
+    } else {
+      return false;
+    }
   }
       
   isolated_square_stats(array_of_isolated_squares) {
@@ -624,9 +717,9 @@ class Game {
     return [player2_distances, player1_distances, closest_player_list];
   }
   
-  distances_to_nearest_piece(array_of_isolated_squares, player_pieces) {
+  distances_to_nearest_piece(array_of_squares, player_pieces) {
     var nearest_distances = [];
-    for (let square of array_of_isolated_squares) {
+    for (let square of array_of_squares) {
       nearest_distances.push(Math.min.apply(null, this.distances(square, player_pieces)));
     }
     return nearest_distances;
