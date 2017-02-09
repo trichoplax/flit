@@ -687,7 +687,7 @@ class Game {
   is_controlled_hypothetically(square, departure_square, destination_square) {
     // Custom check for whether square is controlled as cannot use existing functions for a move that is only hypothetical
     
-    var nearest_player1_distance = Math.min.apply(null, this.distances(square, this.player1_pieces)));
+    var nearest_player1_distance = Math.min.apply(null, this.distances(square, this.player1_pieces));
     
     var hypothetical_player2_pieces = this.player2_pieces;
     var location = this.theIndexOf(hypothetical_player2_pieces, departure_square);
