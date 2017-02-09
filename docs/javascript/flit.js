@@ -842,7 +842,7 @@ class Game {
         
   move_player2_piece(x, y) {
     console.log('move_player2_piece(' + x + ', ' + y + ')');
-    console.assert(this.player2_pieces.length === this.board_count_of_player2_pieces());
+    console.assert(this.player2_pieces.length === this.board_count_of_player2_pieces(), this.player2_pieces.length, "/", this.board_count_of_player2_pieces());
     this.make_square_empty(this.selected_piece_x, this.selected_piece_y);
     this.place_player2_piece(x, y);
     this.convert_neutral_pieces(x, y);
