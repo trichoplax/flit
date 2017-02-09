@@ -780,6 +780,7 @@ class Game {
         }
       }
     }
+    console.log('potential_destination_squares = ' + potential_destination_squares);
     var destination_distances = this.distances(target, potential_destination_squares);
     var min_distance = Math.min.apply(null, destination_distances);
     for (let i=0; i<potential_destination_squares.length; i++) {
@@ -787,6 +788,7 @@ class Game {
         candidates.push(potential_destination_squares[i]);
       }
     }
+    console.log('candidates = ' + candidates);
     var destination = candidates[Math.floor(Math.random() * candidates.length)];
     var receiving_pieces = [];
     for (let square of this.neighbours(destination[0], destination[1])) {
