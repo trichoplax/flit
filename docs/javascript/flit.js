@@ -570,6 +570,7 @@ class Game {
   }
     
   make_computer_move() {
+    console.log('make_computer_move()');
     if (this.game_over === false) {
       if (this.neutral_pieces.length === 0) {
         this.make_move_that_maximises_controlled_isolated_squares();
@@ -583,6 +584,7 @@ class Game {
   }
   
   make_move_that_maximises_controlled_isolated_squares() {
+    console.log('make_move_that_maximises_controlled_isolated_squares');
     var possible_moves = this.find_possible_moves();
     var current_stats = this.isolated_squares_stats(this.isolated_squares);
     var scores = [];    
@@ -597,11 +599,13 @@ class Game {
       }
     }    
     var chosen_move = best_moves[Math.floor(Math.random() * best_moves.length)];
+    this.selected_piece_x = chosen_move[0][0];
+    this.selected_piece_y = chosen_move[0][1];
+    destination = chosen_move[1];
+    this.move_player2_piece(destination[0], destination[1]);
   }
   
   find_possible_moves() {
-    console.log('Board: ' + this.board);
-    console.log('Player 2 pieces: ' + this.player2_pieces);
     var possible_moves = [];
     for (let departure_piece of this.player2_pieces) {
       for (let destination_piece of this.player2_pieces) {
@@ -728,6 +732,7 @@ class Game {
   }
 
   make_random_move() {  // Used for initial easiest setting.
+    console.log('make_random_move');
     while (true) {
       var piece = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
       this.selected_piece_x = piece[0];
@@ -766,6 +771,7 @@ class Game {
   }
   
   move_towards(target) {  
+    console.log('move_towards(' + target + ')');
     var potential_destination_squares = [], candidates = [], piece_to_move;
     for (let piece of this.player2_pieces) {
       for (let square of this.neighbours(piece[0], piece[1])) {
@@ -831,6 +837,7 @@ class Game {
   }
         
   move_player2_piece(x, y) {
+    console.log('move_player2_piece(' + x + ', ' + y + ')');
     this.make_square_empty(this.selected_piece_x, this.selected_piece_y);
     this.place_player2_piece(x, y);
     this.convert_neutral_pieces(x, y);
