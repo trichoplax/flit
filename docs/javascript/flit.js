@@ -842,11 +842,25 @@ class Game {
         
   move_player2_piece(x, y) {
     console.log('move_player2_piece(' + x + ', ' + y + ')');
+    console.assert(this.player2_pieces.length === this.board_count_of_player2_pieces());
     this.make_square_empty(this.selected_piece_x, this.selected_piece_y);
     this.place_player2_piece(x, y);
     this.convert_neutral_pieces(x, y);
     var location = this.theIndexOf(this.player2_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player2_pieces.splice(location, 1);
+  }
+  
+  board_count_of_player2_pieces() {
+    // For debugging purposes
+    var count = 0;
+    for (let x=0; x<12; x++) {
+      for (let y=0; y<12; y++) {
+        if (this.board[x][y] === this.PLAYER2_PIECE) {
+          count += 1;
+        }
+      }
+    }
+    return count;
   }
   
   convert_neutral_pieces(x, y) {
