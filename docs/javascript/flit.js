@@ -705,7 +705,7 @@ class Game {
     }
   }
       
-  isolated_square_stats(array_of_isolated_squares) {
+  isolated_squares_stats(array_of_isolated_squares) {
     var player2_distances = this.distances_to_nearest_piece(array_of_isolated_squares, this.player2_pieces);
     var player1_distances = this.distances_to_nearest_piece(array_of_isolated_squares, this.player1_pieces);
     var closest_player_list = [];
