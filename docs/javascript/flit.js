@@ -673,7 +673,7 @@ class Game {
   }
   
   is_controlled(stats, square) {
-    for (let i=0; i<this.isolated_squares.length, i++) {
+    for (let i=0; i<this.isolated_squares.length; i++) {
       if (this.isolated_squares[i][0] === square[0] && this.isolated_squares[i][1] === square[1]) {
         if (stats[2][i] === 2) {  // stats[2] is the array showing which player is closest for each isolated square
           return true;
