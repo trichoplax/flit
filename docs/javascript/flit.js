@@ -583,7 +583,21 @@ class Game {
   }
   
   make_move_that_maximises_controlled_isolated_squares() {
-    // Random move until implemented later. 
+    this.make_random_move(); // Just until this is implemented.
+//  SEE NOTES 09/02/2017 (2) FOR OPTIMISED ALGORITHM TO MAKE THIS ACHIEVABLE    
+//    var updated_isolated_squares, updated_player2_pieces;
+//    var possible_moves = this.find_possible_moves();
+//    for (let move of possible_moves) {
+//      
+//      find new isolated_squares and player2_pieces after move
+//    }
+//      Count isolated squares that are closer to nearest computer than nearest human
+//      Find maximum count
+//      Find all moves that give that max count
+//      Choose one at random
+  }
+  
+  make_random_move() {  // Used for initial easiest setting.
     while (true) {
       var piece = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
       this.selected_piece_x = piece[0];
