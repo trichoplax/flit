@@ -773,6 +773,7 @@ class Game {
   move_towards(target) {  
     console.log('move_towards(' + target + ')');
     var potential_destination_squares = [], candidates = [], piece_to_move;
+    console.log('player2_pieces = ' + this.player2_pieces);
     for (let piece of this.player2_pieces) {
       for (let square of this.neighbours(piece[0], piece[1])) {
         if (this.board[square[0]][square[1]] === this.EMPTY_SQUARE) {
