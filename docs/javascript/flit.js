@@ -601,12 +601,12 @@ class Game {
   
   find_possible_moves() {
     var possible_moves = [];
-    for (let departure_square of this.player2_pieces) {
+    for (let departure_piece of this.player2_pieces) {
       for (let destination_piece of this.player2_pieces) {
-        if (!(destination_piece === departure_square)) {
+        if (!(destination_piece[0] === departure_piece[0] && destination_piece[1] === departure_piece[1])) {
           for (let destination_square of this.neighbours(destination_piece)) {
             if (this.board[destination_square[0]][destination_square[1]] === this.EMPTY_SQUARE) {
-              possible_moves.push([departure_square, destination_square]);
+              possible_moves.push([departure_piece, destination_square]);
             }
           }
         }
