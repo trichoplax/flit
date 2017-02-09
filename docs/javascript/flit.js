@@ -694,7 +694,7 @@ class Game {
     hypothetical_player2_pieces.splice(location, 1);
     hypothetical_player2_pieces.push(destination_square);
 
-    var nearest_player2_distance = Math.min.apply(null, this.distances(square, hypothetical_player2_pieces)));
+    var nearest_player2_distance = Math.min.apply(null, this.distances(square, hypothetical_player2_pieces));
     
     if (nearest_player2_distance < nearest_player1_distance) {
       return true;
