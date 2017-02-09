@@ -603,7 +603,7 @@ class Game {
     var possible_moves = [];
     for (let departure_square of this.player2_pieces) {
       for (let destination_piece of this.player2_pieces) {
-        if !(destination_piece === departure_square) {
+        if (!(destination_piece === departure_square)) {
           for (let destination_square of this.neighbours(destination_piece)) {
             if (this.board[destination_square[0]][destination_square[1]] === this.EMPTY_SQUARE) {
               possible_moves.push([departure_square, destination_square]);
