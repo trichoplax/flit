@@ -584,19 +584,54 @@ class Game {
   
   make_move_that_maximises_controlled_isolated_squares() {
     this.make_random_move(); // Just until this is implemented.
-//  SEE NOTES 09/02/2017 (2) FOR OPTIMISED ALGORITHM TO MAKE THIS ACHIEVABLE    
-//    var updated_isolated_squares, updated_player2_pieces;
-//    var possible_moves = this.find_possible_moves();
-//    for (let move of possible_moves) {
-//      
-//      find new isolated_squares and player2_pieces after move
-//    }
-//      Count isolated squares that are closer to nearest computer than nearest human
-//      Find maximum count
-//      Find all moves that give that max count
-//      Choose one at random
+    
+    
+    var possible_moves = this.find_possible_moves();
+    var current_stats = this.isolated_squares_stats(this.isolated_squares);
+    var scores = [];    
+    for (let move of possible_moves) {
+      scores.push(this.score(current_stats, move));
+    }      
+    var best_score = Math.max.apply(null, scores);
+    var best_moves = [];
+    for (let i=0; i<possible_moves.length; i++) {
+      if (scores[i] === best_score) {
+        best_moves.push(possible_moves[i]);
+      }
+    }    
+    var chosen_move = best_moves[Math.floor(Math.random() * best_moves.length)];
   }
   
+  find_possible_moves() {
+    
+  }
+    
+  score(stats, move) {
+    
+  }
+      
+  isolated_square_stats(array_of_isolated_squares) {
+    var player2_distances = this.distances_to_nearest_piece(array_of_isolated_squares, this.player2_pieces);
+    var player1_distances = this.distances_to_nearest_piece(array_of_isolated_squares, this.player1_pieces);
+    var closest_player_list = [];
+    for (let i=0; i<array_of_isolated_squares.length; i++) {
+      if (player2_distances[i] < player1_distances[i]) {
+        closest_player_list.push(2);
+      } else {
+        closest_player_list.push(1);
+      }
+    }
+    return [player2_distances, player1_distances, closest_player_list];
+  }
+  
+  distances_to_nearest_piece(array_of_isolated_squares, player_pieces) {
+    var nearest_distances = [];
+    for (let square of array_of_isolated_squares) {
+      nearest_distances.push(Math.min.apply(null, this.distances(square, player_pieces)));
+    }
+    return nearest_distances;
+  }
+
   make_random_move() {  // Used for initial easiest setting.
     while (true) {
       var piece = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
