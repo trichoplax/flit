@@ -585,16 +585,16 @@ class Game {
   
   make_move_that_maximises_controlled_isolated_squares() {
     console.log('make_move_that_maximises_controlled_isolated_squares');
-    this.track_piece_mismatch();
+    this.track_piece_mismatch(588);
     var possible_moves = this.find_possible_moves();
-    this.track_piece_mismatch();
+    this.track_piece_mismatch(590);
     var current_stats = this.isolated_squares_stats(this.isolated_squares);
-    this.track_piece_mismatch();
+    this.track_piece_mismatch(592);
     var scores = [];    
     for (let move of possible_moves) {
       scores.push(this.score(current_stats, move));
     }  
-    this.track_piece_mismatch();    
+    this.track_piece_mismatch(597);    
     var best_score = Math.max.apply(null, scores);
     var best_moves = [];
     for (let i=0; i<possible_moves.length; i++) {
@@ -602,16 +602,16 @@ class Game {
         best_moves.push(possible_moves[i]);
       }
     }  
-    this.track_piece_mismatch();  
+    this.track_piece_mismatch(605);  
     var chosen_move = best_moves[Math.floor(Math.random() * best_moves.length)];
     var selected_piece = chosen_move[0];
     this.selected_piece_x = selected_piece[0];
     this.selected_piece_y = selected_piece[1];
     var destination = chosen_move[1];
     console.log('selected piece: ' + selected_piece + '. destination: ' + destination);
-    this.track_piece_mismatch();
+    this.track_piece_mismatch(612);
     this.move_player2_piece(destination[0], destination[1]);
-    this.track_piece_mismatch();
+    this.track_piece_mismatch(614);
   }
   
   find_possible_moves() {
@@ -851,16 +851,16 @@ class Game {
         
   move_player2_piece(x, y) {
     console.log('move_player2_piece(' + x + ', ' + y + ')');
-    this.track_piece_mismatch();
+    this.track_piece_mismatch(854);
     this.make_square_empty(this.selected_piece_x, this.selected_piece_y);
     this.place_player2_piece(x, y);
     this.convert_neutral_pieces(x, y);
     var location = this.theIndexOf(this.player2_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player2_pieces.splice(location, 1);
-    this.track_piece_mismatch();
+    this.track_piece_mismatch(860);
   }
   
-  track_piece_mismatch() {
+  track_piece_mismatch(line_number) {
     if (!(this.contents_match(this.player2_pieces, this.board_player2_pieces()))) {
       console.log('Mismatch: ' + this.player2_pieces + '/' + this.board_player2_pieces());
       this.display_locations_of_player2_pieces();
