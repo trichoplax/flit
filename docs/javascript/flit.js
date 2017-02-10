@@ -570,7 +570,6 @@ class Game {
   }
     
   make_computer_move() {
-    console.log('make_computer_move()');
     if (this.game_over === false) {
       if (this.neutral_pieces.length === 0) {
         this.make_move_that_maximises_controlled_isolated_squares();
@@ -584,17 +583,12 @@ class Game {
   }
   
   make_move_that_maximises_controlled_isolated_squares() {
-    console.log('make_move_that_maximises_controlled_isolated_squares');
-    this.track_piece_mismatch(588);
     var possible_moves = this.find_possible_moves();
-    this.track_piece_mismatch(590);
     var current_stats = this.isolated_squares_stats(this.isolated_squares);
-    this.track_piece_mismatch(592);
     var scores = [];    
     for (let move of possible_moves) {
       scores.push(this.score(current_stats, move));
     }  
-    this.track_piece_mismatch(597);    
     var best_score = Math.max.apply(null, scores);
     var best_moves = [];
     for (let i=0; i<possible_moves.length; i++) {
@@ -602,16 +596,12 @@ class Game {
         best_moves.push(possible_moves[i]);
       }
     }  
-    this.track_piece_mismatch(605);  
     var chosen_move = best_moves[Math.floor(Math.random() * best_moves.length)];
     var selected_piece = chosen_move[0];
     this.selected_piece_x = selected_piece[0];
     this.selected_piece_y = selected_piece[1];
     var destination = chosen_move[1];
-    console.log('selected piece: ' + selected_piece + '. destination: ' + destination);
-    this.track_piece_mismatch(612);
     this.move_player2_piece(destination[0], destination[1]);
-    this.track_piece_mismatch(614);
   }
   
   find_possible_moves() {
@@ -631,56 +621,53 @@ class Game {
   }
     
   score(stats, move) {
-    this.track_piece_mismatch(634); 
     var departure_square = move[0];
     var destination_square = move[1];
     var relative_controlled_isolated_squares = 0;
     var destroyed_isolated_squares = [];
     
-    this.track_piece_mismatch(640);
     for (let square of [destination_square].concat(this.neighbours(destination_square[0], destination_square[1]))) {
       if (this.is_isolated(square[0], square[1])) {
         destroyed_isolated_squares.push(square);
-        if (this.is_controlled(stats, square)) {
+        if (this.is_controlled(stats, square)) {  // If controlled by player 2
           relative_controlled_isolated_squares -= 1;
-        }
+        } else {  // If controlled by player 1
+          relative_controlled_isolated_squares += 1;
       }
     }
-    this.track_piece_mismatch(649);
     
     var new_player2_distance;
     for (let i=0; i<this.isolated_squares.length; i++) {
       if (this.theIndexOf(destroyed_isolated_squares, this.isolated_squares[i]) === -1) {  // If not destroyed
         if (stats[2][i] === 1) {  // If player 1 was closest
           if (this.distance(destination_square, this.isolated_squares[i]) < stats[1][i]) {  // If new player 2 distance < current player 1 distance
-            relative_controlled_isolated_squares += 1;
+            relative_controlled_isolated_squares += 2;  // Player 1 lost one, player 2 gained one
           }
         } else {  // If player 2 was closest
           if (this.distance(departure_square, this.isolated_squares[i]) === stats[0][i]) {  // If moved piece was one of the closest
             new_player2_distance = this.distances_to_nearest_piece([this.isolated_squares[i]], this.player2_pieces)[0]
             if (new_player2_distance >= stats[1][i]) {  // If player 2 distance has become further than player 1
-              relative_controlled_isolated_squares -= 1;
+              relative_controlled_isolated_squares -= 2;  // Player 1 gained one, player 2 lost one
             }
           }
         }
       }
     }
-    this.track_piece_mismatch(668);
     
     for (let square of [departure_square].concat(this.neighbours(departure_square[0], departure_square[1]))) {
-      if (this.is_isolated_hypothetically(square, departure_square, destination_square) &&
-          this.is_controlled_hypothetically(stats, square, departure_square, destination_square)
-         ) {
-        relative_controlled_isolated_squares += 1;
+      if (this.is_isolated_hypothetically(square, departure_square, destination_square)) {
+        if (this.is_controlled_hypothetically(stats, square, departure_square, destination_square)) {
+          relative_controlled_isolated_squares += 1;
+        } else {  // A new isolated square appeared but is controlled by player 1
+          relative_controlled_isolated_squares -= 1;
+        }
       }
     }
-    this.track_piece_mismatch(677);
     return relative_controlled_isolated_squares;
   }
   
   is_isolated_hypothetically(square_in_question, departure_square, destination_square) {
     // Custom check for whether square is isolated as cannot use existing functions for a move that is only hypothetical
-    this.track_piece_mismatch(683);
     for (let square of [square_in_question].concat(this.neighbours(square_in_question[0], square_in_question[1]))) {
       if (square[0] === destination_square[0] && square[1] === destination_square[1]) {
         return false;
@@ -707,19 +694,15 @@ class Game {
       
   is_controlled_hypothetically(square, departure_square, destination_square) {
     // Custom check for whether square is controlled as cannot use existing functions for a move that is only hypothetical
-    this.track_piece_mismatch(709);
     
     var nearest_player1_distance = Math.min.apply(null, this.distances(square, this.player1_pieces));
-    this.track_piece_mismatch(713);
     
     var hypothetical_player2_pieces = this.player2_pieces.slice();  // Force copy by value to protect player2_pieces from change
     var location = this.theIndexOf(hypothetical_player2_pieces, departure_square);
     hypothetical_player2_pieces.splice(location, 1);
     hypothetical_player2_pieces.push(destination_square);
-    this.track_piece_mismatch(719);
-
+    
     var nearest_player2_distance = Math.min.apply(null, this.distances(square, hypothetical_player2_pieces));
-    this.track_piece_mismatch(722);
     
     if (nearest_player2_distance < nearest_player1_distance) {
       return true;
@@ -751,7 +734,6 @@ class Game {
   }
 
   make_random_move() {  // Used for initial easiest setting.
-    console.log('make_random_move');
     while (true) {
       var piece = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
       this.selected_piece_x = piece[0];
@@ -790,9 +772,7 @@ class Game {
   }
   
   move_towards(target) {  
-    console.log('move_towards(' + target + ')');
     var potential_destination_squares = [], candidates = [], piece_to_move;
-    console.log('player2_pieces = ' + this.player2_pieces);
     for (let piece of this.player2_pieces) {
       for (let square of this.neighbours(piece[0], piece[1])) {
         if (this.board[square[0]][square[1]] === this.EMPTY_SQUARE) {
@@ -800,7 +780,6 @@ class Game {
         }
       }
     }
-    console.log('potential_destination_squares = ' + potential_destination_squares);
     var destination_distances = this.distances(target, potential_destination_squares);
     var min_distance = Math.min.apply(null, destination_distances);
     for (let i=0; i<potential_destination_squares.length; i++) {
@@ -808,7 +787,6 @@ class Game {
         candidates.push(potential_destination_squares[i]);
       }
     }
-    console.log('candidates = ' + candidates);
     var destination = candidates[Math.floor(Math.random() * candidates.length)];
     var receiving_pieces = [];
     for (let square of this.neighbours(destination[0], destination[1])) {
@@ -816,7 +794,6 @@ class Game {
         receiving_pieces.push(square);
       }      
     }
-    console.log('receiving_pieces = ' + receiving_pieces);
     if (receiving_pieces.length > 1) {
       piece_to_move = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
     } else {
@@ -860,56 +837,11 @@ class Game {
   }
         
   move_player2_piece(x, y) {
-    console.log('move_player2_piece(' + x + ', ' + y + ')');
-    this.track_piece_mismatch(854);
     this.make_square_empty(this.selected_piece_x, this.selected_piece_y);
     this.place_player2_piece(x, y);
     this.convert_neutral_pieces(x, y);
     var location = this.theIndexOf(this.player2_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player2_pieces.splice(location, 1);
-    this.track_piece_mismatch(860);
-  }
-  
-  track_piece_mismatch(line_number) {
-    if (!(this.contents_match(this.player2_pieces, this.board_player2_pieces()))) {
-      console.log('MISMATCH: Line number ' + line_number + ' player2_pieces: ' + this.player2_pieces + ' board pieces: ' + this.board_player2_pieces());
-      this.display_locations_of_player2_pieces();
-    }
-  }
-  
-  contents_match(array1, array2) {
-    var array_of_strings1 = [], array_of_strings2 = [];
-    for (let item of array1) {
-      array_of_strings1.push(item[0] + ',' + item[1]);
-    }
-    for (let item of array2) {
-      array_of_strings2.push(item[0] + ',' + item[1]);
-    }
-    if (array_of_strings1.sort().join() === array_of_strings2.sort().join()) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  
-  board_player2_pieces() {
-    // For debugging purposes
-    var pieces = [];
-    for (let x=0; x<12; x++) {
-      for (let y=0; y<12; y++) {
-        if (this.board[x][y] === this.PLAYER2_PIECE) {
-          pieces.push([x, y]);
-        }
-      }
-    }
-    return pieces;
-  }
-  
-  display_locations_of_player2_pieces() {
-    // For debugging purposes
-    for (let piece of this.player2_pieces) {
-      this.place_grey_player2_piece(piece[0], piece[1]);
-    }
   }
   
   convert_neutral_pieces(x, y) {
