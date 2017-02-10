@@ -631,11 +631,13 @@ class Game {
   }
     
   score(stats, move) {
+    this.track_piece_mismatch(634); 
     var departure_square = move[0];
     var destination_square = move[1];
     var relative_controlled_isolated_squares = 0;
     var destroyed_isolated_squares = [];
     
+    this.track_piece_mismatch();
     for (let square of [destination_square].concat(this.neighbours(destination_square[0], destination_square[1]))) {
       if (this.is_isolated(square[0], square[1])) {
         destroyed_isolated_squares.push(square);
@@ -644,6 +646,7 @@ class Game {
         }
       }
     }
+    this.track_piece_mismatch();
     
     var new_player2_distance;
     for (let i=0; i<this.isolated_squares.length; i++) {
@@ -662,6 +665,7 @@ class Game {
         }
       }
     }
+    this.track_piece_mismatch();
     
     for (let square of [departure_square].concat(this.neighbours(departure_square[0], departure_square[1]))) {
       if (this.is_isolated_hypothetically(square, departure_square, destination_square) &&
@@ -670,6 +674,7 @@ class Game {
         relative_controlled_isolated_squares += 1;
       }
     }
+    this.track_piece_mismatch();
     return relative_controlled_isolated_squares;
   }
   
