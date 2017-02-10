@@ -87,7 +87,7 @@ a:hover {
 }
 #div-logo-west {
   order: 1;
-  flex: 4;
+  flex: 3;
 }
 #button-difficulty-west {
   order: 2;
@@ -120,7 +120,7 @@ a:hover {
 }
 #div-logo-north {
   order: 1;
-  flex: 4;
+  flex: 3;
 }
 #button-difficulty-north {
   order: 2;
