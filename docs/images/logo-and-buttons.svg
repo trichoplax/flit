@@ -1,5 +1,5 @@
 <svg xmlns='http://www.w3.org/2000/svg'>
-  <svg id='logo-north-image' viewBox='0 0 56000 14000'>
+  <svg id='logo-north-image' viewBox='0 0 42000 14000'>
     <rect x='0' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='7000' y='7000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='14000' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
@@ -11,7 +11,7 @@
     <polygon points='9000,8000 12000,8000 12000,9000 11000,9000 11000,12000 12000,12000 12000,13000 9000,13000 9000,12000 10000,12000 10000,9000 9000,9000' style='fill:green; stroke:green; stroke-width:1;' />
     <polygon points='15000,8000 20000,8000 20000,9000 18000,9000 18000,13000 17000,13000 17000,9000 15000,9000' style='fill:purple; stroke:purple; stroke-width:1;' />
   </svg>
-  <svg id='logo-west-image' viewBox='0 0 14000 56000'>
+  <svg id='logo-west-image' viewBox='0 0 14000 42000'>
     <rect x='0' y='0' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='7000' y='7000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
     <rect x='0' y='14000' width='7000' height='7000' style='fill:purple; stroke:purple; stroke-width:1;' />
