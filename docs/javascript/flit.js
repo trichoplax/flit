@@ -262,15 +262,19 @@ class Game {
     }
     
     for (t = 0; t <= 1; t++) {
-      square = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
+      square = this.pick_from(this.isolated_squares);
       x = square[0];
       y = square[1];
       this.place_player1_piece(x, y);
-      square = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
+      square = this.pick_from(this.isolated_squares);
       x = square[0];
       y = square[1];
       this.place_player2_piece(x, y);
     }
+  }
+  
+  pick_from(values) {
+    return values[Math.floor(Math.random() * values.length)];
   }
   
   adjust_difficulty() {
@@ -578,7 +582,7 @@ class Game {
   maybe_add_neutral_piece() {
     if (this.isolated_squares.length > 0) {
       if (Math.floor(Math.random()*6) === 0) {
-        var destination = this.isolated_squares[Math.floor(Math.random() * this.isolated_squares.length)];
+        var destination = this.pick_from(this.isolated_squares);
         this.place_neutral_piece(destination[0], destination[1]);
       }
     }
@@ -619,7 +623,7 @@ class Game {
         best_moves.push(possible_moves[i]);
       }
     }  
-    var chosen_move = best_moves[Math.floor(Math.random() * best_moves.length)];
+    var chosen_move = this.pick_from(best_moves);
     var selected_piece = chosen_move[0];
     this.selected_piece_x = selected_piece[0];
     this.selected_piece_y = selected_piece[1];
@@ -767,7 +771,7 @@ class Game {
 
   make_random_move() {  // Used for initial easiest setting.
     while (true) {
-      var piece = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
+      var piece = this.pick_from(this.player2_pieces);
       this.selected_piece_x = piece[0];
       this.selected_piece_y = piece[1];
       this.select_player2_destination_squares(piece[0], piece[1]);
@@ -775,7 +779,7 @@ class Game {
         break;
       }
     }
-    var destination = this.highlighted_destination_squares[Math.floor(Math.random() * this.highlighted_destination_squares.length)];
+    var destination = this.pick_from(this.highlighted_destination_squares);
     this.move_player2_piece(destination[0], destination[1]);
   }
   
@@ -799,7 +803,7 @@ class Game {
           candidates.push(this.neutral_pieces[i]);
         }
       }
-      this.move_towards(candidates[Math.floor(Math.random() * candidates.length)]);
+      this.move_towards(this.pick_from(candidates));
     }
   }
   
@@ -819,7 +823,7 @@ class Game {
         candidates.push(potential_destination_squares[i]);
       }
     }
-    var destination = candidates[Math.floor(Math.random() * candidates.length)];
+    var destination = this.pick_from(candidates);
     var receiving_pieces = [];
     for (let square of this.neighbours(destination[0], destination[1])) {
       if (this.board[square[0]][square[1]] === this.PLAYER2_PIECE) {
@@ -827,10 +831,10 @@ class Game {
       }      
     }
     if (receiving_pieces.length > 1) {
-      piece_to_move = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
+      piece_to_move = this.pick_from(this.player2_pieces);
     } else {
       while (true) {
-        piece_to_move = this.player2_pieces[Math.floor(Math.random() * this.player2_pieces.length)];
+        piece_to_move = this.pick_from(this.player2_pieces);
         if (!(piece_to_move[0] === receiving_pieces[0][0] && piece_to_move[1] === receiving_pieces[0][1])) {
           break;
         }
