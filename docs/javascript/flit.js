@@ -680,6 +680,7 @@ class Game {
   
   is_isolated_hypothetically(square_in_question, departure_square, destination_square) {
     // Custom check for whether square is isolated as cannot use existing functions for a move that is only hypothetical
+    this.track_piece_mismatch(683);
     for (let square of [square_in_question].concat(this.neighbours(square_in_question[0], square_in_question[1]))) {
       if (square[0] === destination_square[0] && square[1] === destination_square[1]) {
         return false;
@@ -706,15 +707,19 @@ class Game {
       
   is_controlled_hypothetically(square, departure_square, destination_square) {
     // Custom check for whether square is controlled as cannot use existing functions for a move that is only hypothetical
+    this.track_piece_mismatch(709);
     
     var nearest_player1_distance = Math.min.apply(null, this.distances(square, this.player1_pieces));
+    this.track_piece_mismatch(713);
     
     var hypothetical_player2_pieces = this.player2_pieces;
     var location = this.theIndexOf(hypothetical_player2_pieces, departure_square);
     hypothetical_player2_pieces.splice(location, 1);
     hypothetical_player2_pieces.push(destination_square);
+    this.track_piece_mismatch(719);
 
     var nearest_player2_distance = Math.min.apply(null, this.distances(square, hypothetical_player2_pieces));
+    this.track_piece_mismatch(722);
     
     if (nearest_player2_distance < nearest_player1_distance) {
       return true;
