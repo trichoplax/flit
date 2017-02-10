@@ -585,26 +585,33 @@ class Game {
   
   make_move_that_maximises_controlled_isolated_squares() {
     console.log('make_move_that_maximises_controlled_isolated_squares');
+    this.track_piece_mismatch();
     var possible_moves = this.find_possible_moves();
+    this.track_piece_mismatch();
     var current_stats = this.isolated_squares_stats(this.isolated_squares);
+    this.track_piece_mismatch();
     var scores = [];    
     for (let move of possible_moves) {
       scores.push(this.score(current_stats, move));
-    }      
+    }  
+    this.track_piece_mismatch();    
     var best_score = Math.max.apply(null, scores);
     var best_moves = [];
     for (let i=0; i<possible_moves.length; i++) {
       if (scores[i] === best_score) {
         best_moves.push(possible_moves[i]);
       }
-    }    
+    }  
+    this.track_piece_mismatch();  
     var chosen_move = best_moves[Math.floor(Math.random() * best_moves.length)];
     var selected_piece = chosen_move[0];
     this.selected_piece_x = selected_piece[0];
     this.selected_piece_y = selected_piece[1];
     var destination = chosen_move[1];
     console.log('selected piece: ' + selected_piece + '. destination: ' + destination);
+    this.track_piece_mismatch();
     this.move_player2_piece(destination[0], destination[1]);
+    this.track_piece_mismatch();
   }
   
   find_possible_moves() {
