@@ -494,7 +494,7 @@ class Game {
     document.getElementById('instructions-south').innerHTML = 'Thinking...';
     this.switch_player_to_move();
     var f = this;
-    setTimeout(function() {f.make_computer_move()}, 50);
+    setTimeout(function() {f.make_computer_move()}, 0);
   }
   
   switch_player_to_move() {
