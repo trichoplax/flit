@@ -842,7 +842,7 @@ class Game {
         
   move_player2_piece(x, y) {
     console.log('move_player2_piece(' + x + ', ' + y + ')');
-    if (!(this.contents_match(this.player2_pieces, this.board_player2_pieces())) {
+    if (!(this.contents_match(this.player2_pieces, this.board_player2_pieces()))) {
       console.log('Mismatch: ' + this.player2_pieces + '/' + this.board_player2_pieces());
       this.display_locations_of_player2_pieces();
     }
