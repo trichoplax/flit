@@ -599,9 +599,11 @@ class Game {
       }
     }    
     var chosen_move = best_moves[Math.floor(Math.random() * best_moves.length)];
-    this.selected_piece_x = chosen_move[0][0];
-    this.selected_piece_y = chosen_move[0][1];
+    var selected_piece = chosen_move[0];
+    this.selected_piece_x = selected_piece[0];
+    this.selected_piece_y = selected_piece[1];
     var destination = chosen_move[1];
+    console.log('selected piece: ' + selected_piece + '. destination: ' + destination);
     this.move_player2_piece(destination[0], destination[1]);
   }
   
