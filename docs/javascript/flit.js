@@ -712,7 +712,7 @@ class Game {
     var nearest_player1_distance = Math.min.apply(null, this.distances(square, this.player1_pieces));
     this.track_piece_mismatch(713);
     
-    var hypothetical_player2_pieces = this.player2_pieces;
+    var hypothetical_player2_pieces = this.player2_pieces.slice();  // Force copy by value to protect player2_pieces from change
     var location = this.theIndexOf(hypothetical_player2_pieces, departure_square);
     hypothetical_player2_pieces.splice(location, 1);
     hypothetical_player2_pieces.push(destination_square);
