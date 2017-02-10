@@ -215,6 +215,12 @@ class Game {
     this.SELECTED_PLAYER1_PIECE = 4;
     this.HIGHLIGHTED_EMPTY_SQUARE = 5;
     
+    this.DIFFICULTY_MESSAGES = ['Learn the rules by playing.',
+                                'A more determined opponent.',
+                                'Facing the top strategist.'
+                               ];
+    this.difficulty = 0;    
+    
     this.restart();
   }
   
@@ -245,8 +251,8 @@ class Game {
     this.selected_piece_y = 0;
     this.player_to_move = 0;
     this.game_over = false;
-    document.getElementById('instructions-east').innerHTML = 'Learn the rules by playing.';
-    document.getElementById('instructions-south').innerHTML = 'Learn the rules by playing.';
+    document.getElementById('instructions-east').innerHTML = this.DIFFICULTY_MESSAGES[this.difficulty];
+    document.getElementById('instructions-south').innerHTML = this.DIFFICULTY_MESSAGES[this.difficulty];
 
     for (y = 0; y <= 11; y++) {
       for (x = 0; x <= 11; x++) {
@@ -265,6 +271,14 @@ class Game {
       y = square[1];
       this.place_player2_piece(x, y);
     }
+  }
+  
+  adjust_difficulty() {
+    this.difficulty = (this.difficulty + 1) % 3
+    document.getElementById('instructions-east').innerHTML = this.DIFFICULTY_MESSAGES[this.difficulty];
+    document.getElementById('instructions-south').innerHTML = this.DIFFICULTY_MESSAGES[this.difficulty];
+    document.getElementById('button-difficulty-north').innerHTML = '<svg viewBox=\'0 0 9000 9000\'><use xlink:href=\'images/logo-and-buttons.svg#difficulty' + (this.difficulty + 1) + '-image\'></use></svg>';
+    document.getElementById('button-difficulty-west').innerHTML = '<svg viewBox=\'0 0 9000 9000\'><use xlink:href=\'images/logo-and-buttons.svg#difficulty' + (this.difficulty + 1) + '-image\'></use></svg>';
   }
   
   place_player1_piece(x, y) {
@@ -572,12 +586,20 @@ class Game {
   make_computer_move() {
     if (this.game_over === false) {
       if (this.neutral_pieces.length === 0) {
-        this.make_move_that_maximises_controlled_isolated_squares();
+        if (this.difficulty === 2) {
+          this.make_move_that_maximises_controlled_isolated_squares();
+        } else {
+          this.make_random_move();
+        }
       } else {
-        this.move_towards_most_contested_neutral_piece();
+        if (this.difficulty === 0) {
+          this.make_random_move();
+        } else {
+          this.move_towards_most_contested_neutral_piece();
+        }
       }
-      document.getElementById('instructions-east').innerHTML = 'Learn the rules by playing.';
-      document.getElementById('instructions-south').innerHTML = 'Learn the rules by playing.';            
+      document.getElementById('instructions-east').innerHTML = this.DIFFICULTY_MESSAGES[this.difficulty];
+      document.getElementById('instructions-south').innerHTML = this.DIFFICULTY_MESSAGES[this.difficulty];            
       this.switch_player_to_move();
     }
   }
