@@ -1,5 +1,5 @@
 # flit
 A simple board game.
 
-[Playable here.](https://phagocyte.github.io/flit/)
+[Playable here on desktop and phone.](https://phagocyte.github.io/flit/)
 
