@@ -862,7 +862,7 @@ class Game {
   
   track_piece_mismatch(line_number) {
     if (!(this.contents_match(this.player2_pieces, this.board_player2_pieces()))) {
-      console.log('Mismatch: ' + this.player2_pieces + '/' + this.board_player2_pieces());
+      console.log('MISMATCH: Line number ' + line_number + ' player2_pieces: ' + this.player2_pieces + ' board pieces: ' + this.board_player2_pieces());
       this.display_locations_of_player2_pieces();
     }
   }
