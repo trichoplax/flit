@@ -612,7 +612,7 @@ class Game {
     for (let move of possible_moves) {
       scores.push(this.score(current_stats, move));
     }  
-    var best_score = Math.max.apply(null, scores);
+    var best_score = this.maximum(scores);
     var best_moves = [];
     for (let i=0; i<possible_moves.length; i++) {
       if (scores[i] === best_score) {
@@ -625,6 +625,14 @@ class Game {
     this.selected_piece_y = selected_piece[1];
     var destination = chosen_move[1];
     this.move_player2_piece(destination[0], destination[1]);
+  }
+  
+  maximum(values) {  // Math.max does not work with array input, only a list of arguments
+    return Math.max.apply(null, values);
+  }
+  
+  minimum(values) {  // Math.min does not work with array input, only a list of arguments
+    return Math.min.apply(null, values);
   }
   
   find_possible_moves() {
@@ -719,14 +727,14 @@ class Game {
   is_controlled_hypothetically(square, departure_square, destination_square) {
     // Custom check for whether square is controlled as cannot use existing functions for a move that is only hypothetical
     
-    var nearest_player1_distance = Math.min.apply(null, this.distances(square, this.player1_pieces));
+    var nearest_player1_distance = this.minimum(this.distances(square, this.player1_pieces));
     
     var hypothetical_player2_pieces = this.player2_pieces.slice();  // Force copy by value to protect player2_pieces from change
     var location = this.theIndexOf(hypothetical_player2_pieces, departure_square);
     hypothetical_player2_pieces.splice(location, 1);
     hypothetical_player2_pieces.push(destination_square);
     
-    var nearest_player2_distance = Math.min.apply(null, this.distances(square, hypothetical_player2_pieces));
+    var nearest_player2_distance = this.minimum(this.distances(square, hypothetical_player2_pieces));
     
     if (nearest_player2_distance < nearest_player1_distance) {
       return true;
@@ -752,7 +760,7 @@ class Game {
   distances_to_nearest_piece(array_of_squares, player_pieces) {
     var nearest_distances = [];
     for (let square of array_of_squares) {
-      nearest_distances.push(Math.min.apply(null, this.distances(square, player_pieces)));
+      nearest_distances.push(this.minimum(this.distances(square, player_pieces)));
     }
     return nearest_distances;
   }
@@ -774,15 +782,15 @@ class Game {
   move_towards_most_contested_neutral_piece() {
     var player1_closest_distance, player2_closest_distance, difference, differences = [], min_difference, candidates = [];
     for (let neutral_piece of this.neutral_pieces) {
-      player1_closest_distance = Math.min.apply(null, this.distances(neutral_piece, this.player1_pieces));
-      player2_closest_distance = Math.min.apply(null, this.distances(neutral_piece, this.player2_pieces));
+      player1_closest_distance = this.minimum(this.distances(neutral_piece, this.player1_pieces));
+      player2_closest_distance = this.minimum(this.distances(neutral_piece, this.player2_pieces));
       difference = player1_closest_distance - player2_closest_distance;
       if (difference < 0) {
         difference = 13;  // Larger than max possible distance of 12.
       }
       differences.push(difference);
     }
-    min_difference = Math.min.apply(null, differences);
+    min_difference = this.minimum(differences);
     if (min_difference === 13) {
       this.make_move_that_maximises_controlled_isolated_squares();
     } else {
@@ -805,7 +813,7 @@ class Game {
       }
     }
     var destination_distances = this.distances(target, potential_destination_squares);
-    var min_distance = Math.min.apply(null, destination_distances);
+    var min_distance = this.minimum(destination_distances);
     for (let i=0; i<potential_destination_squares.length; i++) {
       if (destination_distances[i] === min_distance) {
         candidates.push(potential_destination_squares[i]);
