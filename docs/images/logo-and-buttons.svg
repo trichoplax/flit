@@ -63,4 +63,24 @@
   <svg id='highlighted-empty-square-image' viewBox='0 0 7000 7000'>
     <polygon points='0,0 7000,0 7000,7000 0,7000' style='fill:green; stroke:green; stroke-width:1; opacity:0.5;' />
   </svg>
+  <svg id='difficulty1-image' viewBox='0 0 9000 9000'>
+    <rect x='1000' y='1000' width='7000' height='7000' rx='700' ry='700' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+  </svg>
+  <svg id='difficulty2-image' viewBox='0 0 9000 9000'>
+    <rect x='1000' y='1000' width='2800' height='2800' rx='280' ry='280' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+    <rect x='5200' y='1000' width='2800' height='2800' rx='280' ry='280' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+    <rect x='1000' y='5200' width='2800' height='2800' rx='280' ry='280' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+    <rect x='5200' y='5200' width='2800' height='2800' rx='280' ry='280' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+  </svg>
+  <svg id='difficulty3-image' viewBox='0 0 9000 9000'>
+    <rect x='1000' y='1000' width='1750' height='1750' rx='175' ry='175' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+    <rect x='3625' y='1000' width='1750' height='1750' rx='175' ry='175' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+    <rect x='6250' y='1000' width='1750' height='1750' rx='175' ry='175' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+    <rect x='1000' y='3625' width='1750' height='1750' rx='175' ry='175' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+    <rect x='3625' y='3625' width='1750' height='1750' rx='175' ry='175' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+    <rect x='6250' y='3625' width='1750' height='1750' rx='175' ry='175' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+    <rect x='1000' y='6250' width='1750' height='1750' rx='175' ry='175' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+    <rect x='3625' y='6250' width='1750' height='1750' rx='175' ry='175' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+    <rect x='6250' y='6250' width='1750' height='1750' rx='175' ry='175' style='fill:#ccc; stroke:#ccc; stroke-width:1' />
+  </svg>
 </svg>
