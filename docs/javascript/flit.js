@@ -633,6 +633,7 @@ class Game {
           relative_controlled_isolated_squares -= 1;
         } else {  // If controlled by player 1
           relative_controlled_isolated_squares += 1;
+        }
       }
     }
     
