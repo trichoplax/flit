@@ -643,7 +643,7 @@ class Game {
     var possible_moves = [];
     for (let departure_piece of this.player2_pieces) {
       for (let destination_piece of this.player2_pieces) {
-        if (!(destination_piece[0] === departure_piece[0] && destination_piece[1] === departure_piece[1])) {
+        if (!(destination_piece.join() === departure_piece.join())) {
           for (let destination_square of this.neighbours(destination_piece[0], destination_piece[1])) {
             if (this.board[destination_square[0]][destination_square[1]] === this.EMPTY_SQUARE) {
               possible_moves.push([departure_piece, destination_square]);
@@ -705,9 +705,9 @@ class Game {
   is_isolated_hypothetically(square_in_question, departure_square, destination_square) {
     // Custom check for whether square is isolated as cannot use existing functions for a move that is only hypothetical
     for (let square of [square_in_question].concat(this.neighbours(square_in_question[0], square_in_question[1]))) {
-      if (square[0] === destination_square[0] && square[1] === destination_square[1]) {
+      if (square.join() === destination_square.join()) {
         return false;
-      } else if (!((square[0] === departure_square[0] && square[1] === departure_square[1]) ||
+      } else if (!((square[0].join() === departure_square.join()) ||
                    this.board[square[0]][square[1]] === this.EMPTY_SQUARE)
                 ) {
         return false;
@@ -718,7 +718,7 @@ class Game {
   
   is_controlled(stats, square) {
     for (let i=0; i<this.isolated_squares.length; i++) {
-      if (this.isolated_squares[i][0] === square[0] && this.isolated_squares[i][1] === square[1]) {
+      if (this.isolated_squares[i].join() === square.join()) {
         if (stats[2][i] === 2) {  // stats[2] is the array showing which player is closest for each isolated square
           return true;
         } else {
@@ -835,7 +835,7 @@ class Game {
     } else {
       while (true) {
         piece_to_move = this.pick_from(this.player2_pieces);
-        if (!(piece_to_move[0] === receiving_pieces[0][0] && piece_to_move[1] === receiving_pieces[0][1])) {
+        if (!(piece_to_move.join() === receiving_pieces[0].join())) {
           break;
         }
       }
