@@ -493,7 +493,8 @@ class Game {
     document.getElementById('instructions-east').innerHTML = 'Thinking...';
     document.getElementById('instructions-south').innerHTML = 'Thinking...';
     this.switch_player_to_move();
-    setTimeout(function() {this.make_computer_move()}, 50);
+    f = this.make_computer_move;
+    setTimeout(f, 50);
   }
   
   switch_player_to_move() {
