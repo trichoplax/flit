@@ -707,7 +707,7 @@ class Game {
     for (let square of [square_in_question].concat(this.neighbours(square_in_question[0], square_in_question[1]))) {
       if (square.join() === destination_square.join()) {
         return false;
-      } else if (!((square[0].join() === departure_square.join()) ||
+      } else if (!((square.join() === departure_square.join()) ||
                    this.board[square[0]][square[1]] === this.EMPTY_SQUARE)
                 ) {
         return false;
