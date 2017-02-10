@@ -637,7 +637,7 @@ class Game {
     var relative_controlled_isolated_squares = 0;
     var destroyed_isolated_squares = [];
     
-    this.track_piece_mismatch();
+    this.track_piece_mismatch(640);
     for (let square of [destination_square].concat(this.neighbours(destination_square[0], destination_square[1]))) {
       if (this.is_isolated(square[0], square[1])) {
         destroyed_isolated_squares.push(square);
@@ -646,7 +646,7 @@ class Game {
         }
       }
     }
-    this.track_piece_mismatch();
+    this.track_piece_mismatch(649);
     
     var new_player2_distance;
     for (let i=0; i<this.isolated_squares.length; i++) {
@@ -665,7 +665,7 @@ class Game {
         }
       }
     }
-    this.track_piece_mismatch();
+    this.track_piece_mismatch(668);
     
     for (let square of [departure_square].concat(this.neighbours(departure_square[0], departure_square[1]))) {
       if (this.is_isolated_hypothetically(square, departure_square, destination_square) &&
@@ -674,7 +674,7 @@ class Game {
         relative_controlled_isolated_squares += 1;
       }
     }
-    this.track_piece_mismatch();
+    this.track_piece_mismatch(677);
     return relative_controlled_isolated_squares;
   }
   
