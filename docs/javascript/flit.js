@@ -844,15 +844,20 @@ class Game {
         
   move_player2_piece(x, y) {
     console.log('move_player2_piece(' + x + ', ' + y + ')');
-    if (!(this.contents_match(this.player2_pieces, this.board_player2_pieces()))) {
-      console.log('Mismatch: ' + this.player2_pieces + '/' + this.board_player2_pieces());
-      this.display_locations_of_player2_pieces();
-    }
+    this.track_piece_mismatch();
     this.make_square_empty(this.selected_piece_x, this.selected_piece_y);
     this.place_player2_piece(x, y);
     this.convert_neutral_pieces(x, y);
     var location = this.theIndexOf(this.player2_pieces, [this.selected_piece_x, this.selected_piece_y]);
     this.player2_pieces.splice(location, 1);
+    this.track_piece_mismatch();
+  }
+  
+  track_piece_mismatch() {
+    if (!(this.contents_match(this.player2_pieces, this.board_player2_pieces()))) {
+      console.log('Mismatch: ' + this.player2_pieces + '/' + this.board_player2_pieces());
+      this.display_locations_of_player2_pieces();
+    }
   }
   
   contents_match(array1, array2) {
