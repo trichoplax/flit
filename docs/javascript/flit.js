@@ -842,8 +842,8 @@ class Game {
         
   move_player2_piece(x, y) {
     console.log('move_player2_piece(' + x + ', ' + y + ')');
-    if (!(this.player2_pieces.length === this.board_count_of_player2_pieces())) {
-      console.log('Mismatch: ' + this.player2_pieces.length + '/' + this.board_count_of_player2_pieces());
+    if (!(this.contents_match(this.player2_pieces, this.board_player2_pieces())) {
+      console.log('Mismatch: ' + this.player2_pieces + '/' + this.board_player2_pieces());
       this.display_locations_of_player2_pieces();
     }
     this.make_square_empty(this.selected_piece_x, this.selected_piece_y);
@@ -853,17 +853,32 @@ class Game {
     this.player2_pieces.splice(location, 1);
   }
   
-  board_count_of_player2_pieces() {
+  contents_match(array1, array2) {
+    var array_of_strings1 = [], array_of_strings2 = [];
+    for (let item of array1) {
+      array_of_strings1.push(item[0] + ',' + item[1]);
+    }
+    for (let item of array2) {
+      array_of_strings2.push(item[0] + ',' + item[1]);
+    }
+    if (array_of_strings1.sort().join() === array_of_strings2.sort().join()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  board_player2_pieces() {
     // For debugging purposes
-    var count = 0;
+    var pieces = [];
     for (let x=0; x<12; x++) {
       for (let y=0; y<12; y++) {
         if (this.board[x][y] === this.PLAYER2_PIECE) {
-          count += 1;
+          pieces.push([x, y]);
         }
       }
     }
-    return count;
+    return pieces;
   }
   
   display_locations_of_player2_pieces() {
